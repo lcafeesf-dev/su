@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#471019" />
+<title>Find Your Summer Pause | L Cafe</title>
+<style>
+:root{
+  --scarlet:#471019;--scarlet-2:#651b28;--ivory:#f4f1eb;--paper:#fbfaf7;
+  --pink:#c0b5b3;--sage:#747973;--ink:#251d1f;--muted:#746b6d;
+  --line:#ded7d2;--shadow:0 20px 60px rgba(50,17,25,.14)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(180deg,#eee5e2,#f8f5f0 25%,#f1ece7);font-family:Tahoma,"Segoe UI",Arial,sans-serif;color:var(--ink);min-height:100vh}
+button{font:inherit}
+.app{max-width:520px;margin:0 auto;min-height:100vh;background:var(--paper);position:relative;overflow:hidden;box-shadow:0 0 80px rgba(51,20,28,.12)}
+.app:before{content:'';position:absolute;inset:-15% -35% auto auto;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(192,181,179,.42),rgba(192,181,179,0) 68%);pointer-events:none}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;position:relative;z-index:2}
+.logo{font-family:Georgia,serif;color:var(--scarlet);font-size:24px;line-height:1}.logo small{display:block;font-family:Tahoma,sans-serif;font-size:8px;letter-spacing:2px;margin-top:6px;color:var(--muted);direction:ltr}
+.step{font-size:12px;color:var(--muted)}
+.progress-wrap{height:4px;background:#eee8e4;margin:0 22px;border-radius:99px;overflow:hidden}.progress{height:100%;width:0;background:var(--scarlet);transition:.35s ease}
+.screen{display:none;min-height:calc(100vh - 92px);padding:26px 22px 32px;position:relative;z-index:1}.screen.active{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.hero{padding-top:24px}.kicker{font-size:11px;color:var(--scarlet-2);letter-spacing:1.8px;text-transform:uppercase;margin-bottom:12px;direction:ltr;text-align:right}
+h1,h2,h3{margin:0;color:var(--scarlet);line-height:1.6;font-weight:700}h1{font-size:36px;line-height:1.5;margin-bottom:12px}h2{font-size:24px;margin-bottom:8px}h3{font-size:16px}
+.lead{font-size:15px;line-height:2;color:#4b4042;margin:0 0 22px}
+.pills{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:24px 0}.pill{border:1px solid var(--line);background:#fff;border-radius:18px;padding:14px 12px;position:relative;overflow:hidden}.pill:after{content:'';position:absolute;width:48px;height:48px;border-radius:50%;left:-18px;bottom:-20px;background:rgba(71,16,25,.05)}.pill b{display:block;color:var(--scarlet);font-size:13px;direction:ltr;text-align:right}.pill span{font-size:11px;color:var(--muted)}.pill em{font-style:normal;font-size:9px;color:var(--pink);display:block;margin-top:5px}
+.primary,.secondary{width:100%;border-radius:18px;padding:15px 18px;border:0;cursor:pointer;transition:.2s}.primary{background:var(--scarlet);color:#fff;box-shadow:0 10px 26px rgba(71,16,25,.22)}.primary:active{transform:scale(.985)}.secondary{background:#fff;border:1px solid var(--line);color:var(--scarlet);margin-top:10px}
+.note{font-size:11px;color:var(--muted);text-align:center;line-height:1.9;margin-top:12px}
+.q-wrap{padding-top:10px}.q-no{font-size:11px;color:var(--pink);letter-spacing:1px;margin-bottom:10px;direction:ltr;text-align:right}.question{font-size:23px;color:var(--scarlet);line-height:1.75;margin-bottom:20px;font-weight:700}.answers{display:grid;gap:11px}.answer{display:flex;align-items:center;gap:12px;text-align:right;width:100%;background:#fff;border:1px solid var(--line);border-radius:18px;padding:15px;cursor:pointer;color:var(--ink);transition:.2s}.answer:hover{border-color:#bfa8aa;transform:translateY(-1px)}.answer .dot{width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:var(--ivory);color:var(--scarlet);font-size:15px;flex:0 0 auto}.answer strong{display:block;font-size:14px}.answer small{display:block;color:var(--muted);font-size:11px;margin-top:4px;line-height:1.7}
+.back{background:none;border:0;color:var(--muted);padding:10px 0;margin-top:12px;cursor:pointer}
+.loading{display:grid;place-items:center;text-align:center;padding-top:90px}.loader{width:82px;height:82px;border-radius:50%;border:1px solid var(--pink);position:relative;margin-bottom:24px}.loader:before,.loader:after{content:'';position:absolute;inset:9px;border-radius:50%;border:1px solid rgba(71,16,25,.25);animation:pulse 1.6s infinite}.loader:after{inset:21px;animation-delay:.35s}@keyframes pulse{50%{transform:scale(1.18);opacity:.25}}
+.result-visual{height:112px;border-radius:20px;margin:18px 0 22px;position:relative;overflow:hidden;background:linear-gradient(135deg,#f1e9df,#e7dcda);border:1px solid rgba(71,16,25,.22);box-shadow:0 10px 24px rgba(71,16,25,.08)}.result-visual:before,.result-visual:after{content:'';position:absolute;border-radius:50%;background:rgba(71,16,25,.07)}.result-visual:before{width:150px;height:150px;left:-45px;top:-75px}.result-visual:after{width:95px;height:95px;right:30px;bottom:-52px}.result-symbol{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--scarlet);font-family:Georgia,serif;font-size:18px;font-weight:700;letter-spacing:2.2px;direction:ltr;text-shadow:none;padding:0 20px}
+.result-card{background:linear-gradient(150deg,#fff,#f7f0ed);border:1px solid var(--line);border-radius:28px;padding:0 24px 24px;box-shadow:var(--shadow);position:relative;overflow:hidden}.result-card:after{content:'';position:absolute;width:180px;height:180px;border-radius:50%;left:-70px;bottom:-80px;background:rgba(71,16,25,.05);pointer-events:none}
+.result-label{font-size:11px;color:var(--muted);letter-spacing:1.6px;direction:ltr;text-align:right}.line-name{font-family:Georgia,serif;font-size:40px;color:var(--scarlet);margin:10px 0 2px;direction:ltr;text-align:right}.mood{color:var(--sage);font-size:13px;margin-bottom:18px;direction:ltr;text-align:right}.drink{border-top:1px solid var(--line);padding-top:18px;margin-top:12px}.drink b{display:block;color:var(--scarlet);font-size:20px;line-height:1.7}.drink .en-name{font-family:Georgia,serif;font-size:13px;color:var(--sage);direction:ltr;text-align:right;margin-top:-3px}.drink p{font-size:13px;line-height:1.9;color:#4b4042;margin:8px 0 12px}.meta{display:flex;flex-wrap:wrap;gap:7px}.tag{font-size:10px;background:#eee7e4;color:var(--scarlet);padding:6px 9px;border-radius:99px}.order{display:flex;align-items:center;justify-content:space-between;background:var(--scarlet);color:#fff;border-radius:18px;padding:14px 16px;margin-top:18px;position:relative;z-index:2}.order span{font-size:11px}.order b{font-size:18px;direction:ltr}
+.alt{margin-top:16px;border:1px dashed #cdbfc0;border-radius:18px;padding:14px;background:rgba(255,255,255,.6);position:relative;z-index:2}.alt b{color:var(--scarlet)}.alt p{margin:4px 0 0;font-size:12px;color:var(--muted);line-height:1.8}
+.action-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.action-grid button{padding:13px 10px;border-radius:16px;border:1px solid var(--line);background:#fff;color:var(--scarlet);cursor:pointer}.action-grid button:first-child{background:var(--scarlet);color:#fff;border-color:var(--scarlet)}
+.preview-note{font-size:10px;color:var(--muted);text-align:center;margin-top:14px;line-height:1.8}.footer{padding:18px 22px 26px;text-align:center;font-size:10px;color:#9a9092}.footer b{color:var(--scarlet)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:#251d1f;color:#fff;padding:10px 16px;border-radius:99px;font-size:12px;opacity:0;pointer-events:none;transition:.25s;z-index:20}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.staff-overlay{position:fixed;inset:0;background:var(--scarlet);color:#fff;z-index:30;display:none;padding:26px}.staff-overlay.active{display:flex;flex-direction:column;animation:fade .25s ease}.staff-close{align-self:flex-start;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:50%;width:42px;height:42px;cursor:pointer}.staff-content{margin:auto;text-align:center;width:min(430px,100%)}.staff-kicker{font-size:11px;letter-spacing:2px;direction:ltr}.staff-line{font-family:Georgia,serif;font-size:42px;margin:16px 0 8px;direction:ltr}.staff-name{font-size:25px;line-height:1.7;font-weight:700}.staff-en{font-family:Georgia,serif;font-size:14px;color:#d9c8cb;direction:ltr;margin-top:4px}.staff-code{font-family:Georgia,serif;font-size:62px;margin:28px 0 12px;border:1px solid rgba(255,255,255,.35);border-radius:25px;padding:17px;direction:ltr}.staff-hint{font-size:13px;color:#eadfe1}
+@media(min-width:700px){body{padding:30px 0}.app{border-radius:32px;min-height:calc(100vh - 60px)}.screen{min-height:calc(100vh - 152px)}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <div class="logo">L cafe<small>YOUR DAILY PAUSE</small></div>
+    <div class="step" id="stepLabel">شروع</div>
+  </div>
+  <div class="progress-wrap"><div class="progress" id="progress"></div></div>
+
+  <main>
+    <section class="screen active" id="intro">
+      <div class="hero">
+        <div class="kicker">FIND YOUR SUMMER PAUSE</div>
+        <h1>مود امروزت چه طعمیه؟</h1>
+        <p class="lead">فقط با سه انتخاب کوتاه، از بین نوشیدنی‌های جدید مناسب‌ترین Summer Pause امروزت رو پیدا کن.</p>
+        <div class="pills">
+          <div class="pill"><b>ICED TEA</b><span>سبک و خوش‌عطر</span><em>۴ انتخاب</em></div>
+          <div class="pill"><b>REFRESHER</b><span>میوه‌ای و پرانرژی</span><em>۳ انتخاب</em></div>
+          <div class="pill"><b>CLOUDY</b><span>نرم و لایه‌ای</span><em>۵ انتخاب</em></div>
+          <div class="pill"><b>FRAPPE</b><span>غلیظ و دسرمانند</span><em>۴ انتخاب</em></div>
+        </div>
+        <button class="primary" id="startBtn">شروع تست</button>
+        <p class="note">سه سؤال کوتاه، کمتر از ۳۰ ثانیه؛ در پایان یک نوشیدنی دقیق با کد سفارش می‌گیری.</p>
+      </div>
+    </section>
+
+    <section class="screen" id="quiz">
+      <div class="q-wrap">
+        <div class="q-no" id="qNo"></div>
+        <div class="question" id="qText"></div>
+        <div class="answers" id="answers"></div>
+        <button class="back" id="backBtn">→ سؤال قبلی</button>
+      </div>
+    </section>
+
+    <section class="screen" id="loading">
+      <div class="loading">
+        <div class="loader"></div>
+        <h2>داریم Summer Pause تو رو پیدا می‌کنیم</h2>
+        <p class="lead">جواب‌هات رو با آیتم‌های واقعی منوی جدید تطبیق می‌دیم…</p>
+      </div>
+    </section>
+
+    <section class="screen" id="result">
+      <div class="result-card" id="shareCard">
+        <div class="result-visual"><div class="result-symbol" id="resultSymbol">L SUMMER</div></div>
+        <div class="result-label">YOUR SUMMER PAUSE</div>
+        <div class="line-name" id="lineName">CLOUDY</div>
+        <div class="mood" id="moodText">Soft · Creamy · Distinctive</div>
+        <div class="drink">
+          <span class="small">پیشنهاد اصلی برای تو</span>
+          <b id="drinkName">کلودی پسته</b>
+          <div class="en-name" id="drinkEn">Pistachio Cloudy</div>
+          <p id="drinkDesc">کلودی با کرم پسته، بافت نرم و مخملی و طعمی متعادل.</p>
+          <div class="meta" id="tags"></div>
+        </div>
+        <div class="order"><span>کد سفارش</span><b id="orderCode">CL-01</b></div>
+        <div class="alt"><b>انتخاب جایگزین:</b><p id="altText"></p></div>
+      </div>
+      <div class="action-grid">
+        <button id="showStaff">نمایش به پرسنل</button>
+        <button id="shareBtn">اشتراک نتیجه</button>
+      </div>
+      <button class="secondary" id="restartBtn">شروع دوباره</button>
+      <p class="preview-note">آیتم‌ها از رسپی‌های منوی جدید وارد شده‌اند. قیمت و تصاویر محصول پس از نهایی‌شدن اضافه می‌شوند.</p>
+    </section>
+  </main>
+
+  <div class="footer">Summer 1405 · <b>L Cafe</b></div>
+</div>
+<div class="toast" id="toast">انجام شد</div>
+
+<div class="staff-overlay" id="staffOverlay" aria-hidden="true">
+  <button class="staff-close" id="staffClose" aria-label="بستن">×</button>
+  <div class="staff-content">
+    <div class="staff-kicker">SHOW THIS SCREEN TO THE STAFF</div>
+    <div class="staff-line" id="staffLine">CLOUDY</div>
+    <div class="staff-name" id="staffName">کلودی پسته</div>
+    <div class="staff-en" id="staffEn">Pistachio Cloudy</div>
+    <div class="staff-code" id="staffCode">CL-01</div>
+    <div class="staff-hint">این صفحه را برای ثبت سفارش به پرسنل نشان دهید.</div>
+  </div>
+</div>
+
+<script>
+const lineMeta={
+  icedtea:{name:'ICED TEA',mood:'Clean · Aromatic · Sparkling',gradient:'linear-gradient(135deg,#5c6660,#b9c1b8)'},
+  refresher:{name:'REFRESHER',mood:'Fresh · Fruity · Sparkling',gradient:'linear-gradient(135deg,#7d2635,#db8e92)'},
+  cloudy:{name:'CLOUDY',mood:'Soft · Creamy · Distinctive',gradient:'linear-gradient(135deg,#6a5360,#c9b8bc)'},
+  frappe:{name:'FRAPPE',mood:'Rich · Icy · Dessert-style',gradient:'linear-gradient(135deg,#4b2924,#b27e63)'}
+};
+
+const items={
+  icedtea:[
+    {name:'آیس‌تی اپل پارادایز',en:'Apple Paradise Iced Tea',code:'IT-01',desc:'چای سرد شفاف با پروفایل سیب سبز، اسیدیته ملایم و پایان طعمی تازه.',tags:['سیب سبز','شفاف','Crisp & Fresh']},
+    {name:'آیس‌تی پیچ بلک تی',en:'Peach Black Tea',code:'IT-02',desc:'ترکیب چای سیاه و هلو با بافت خنک و گازدار؛ میوه‌ای و متعادل.',tags:['هلو','چای سیاه','Fruity & Balanced']},
+    {name:'آیس‌تی پینک رز',en:'Pink Rose Iced Tea',code:'IT-03',desc:'آیس‌تی گلی، لطیف و معطر با حس نهایی ظریف و روشن.',tags:['گلی','لطیف','Elegant & Floral']},
+    {name:'آیس‌تی کاسکارا رویبوس',en:'Cascara Rooibos Iced Tea',code:'IT-04',desc:'پروفایل میوه خشک، کارامل و نت‌های گیاهی با پایان نرم و عمیق.',tags:['میوه خشک','کاراملی','Smooth & Deep']}
+  ],
+  refresher:[
+    {name:'رفرشر توت‌فرنگی و گیلاس',en:'Strawberry & Cherry Refresher',code:'RF-01',desc:'ترکیب توت‌فرنگی و گیلاس با عسل و مرکبات؛ شفاف، گازدار و ترش‌وشیرین.',tags:['میوه‌های قرمز','ترش‌وشیرین','گازدار']},
+    {name:'رفرشر انبه و شاه‌توت',en:'Mango & Blackberry Refresher',code:'RF-02',desc:'انبه و شاه‌توت با عسل و مرکبات؛ میوه‌ای، رنگی و طراوت‌بخش.',tags:['انبه','شاه‌توت','میوه‌ای']},
+    {name:'رفرشر ریحان ایتالیایی و زنجبیل',en:'Italian Basil & Ginger Refresher',code:'RF-03',desc:'ریحان تازه، زنجبیل و لیموترش با سودا؛ گیاهی، معطر و متفاوت.',tags:['ریحان','زنجبیل','Herbal & Fresh']}
+  ],
+  cloudy:[
+    {name:'کلودی پسته',en:'Pistachio Cloudy',code:'CL-01',desc:'نوشیدنی کلودی با کرم پسته؛ بافت نرم، مخملی و طعم یکنواخت.',tags:['پسته','مخملی','کرمی']},
+    {name:'کلودی زعفران',en:'Saffron Cloudy',code:'CL-02',desc:'نوشیدنی کلودی با کرم زعفران؛ معطر، لطیف و دارای شخصیت ایرانی.',tags:['زعفران','معطر','لطیف']},
+    {name:'کلودی کوکی',en:'Cookie Cloudy',code:'CL-03',desc:'نوشیدنی کلودی با کرم کوکی؛ شیرین‌تر، نرم و دسرگونه.',tags:['کوکی','شیرین','دسرگونه']},
+    {name:'کلودی ماچا',en:'Matcha Cloudy',code:'CL-04',desc:'نوشیدنی کلودی با کرم ماچا؛ گیاهی، نرم و با بافت پایدار.',tags:['ماچا','گیاهی','متفاوت']},
+    {name:'کلودی اسپیرولینا',en:'Spirulina Cloudy',code:'CL-05',desc:'نوشیدنی کلودی با کرم اسپیرولینا؛ رنگ طبیعی و هویت بصری متمایز.',tags:['اسپیرولینا','رنگ طبیعی','خاص']}
+  ],
+  frappe:[
+    {name:'فراپه کارامل نمکی',en:'Salted Caramel Frappe',code:'FR-01',desc:'فراپه کرمی با طعم شیرین و نمکی کارامل؛ سنگین و دسرمحور.',tags:['کارامل نمکی','کرمی','Dessert-style']},
+    {name:'فراپه ارده',en:'Tahini Frappe',code:'FR-02',desc:'فراپه با ارده دوآتش؛ آجیلی، عمیق و سنتی با اجرای مدرن.',tags:['ارده','آجیلی','Nutty & Deep']},
+    {name:'فراپه شکلات',en:'Chocolate Frappe',code:'FR-03',desc:'فراپه با طعم شکلات خالص و بافت کرمی، شیرین و پایدار.',tags:['شکلات','کلاسیک','Creamy']},
+    {name:'فراپه نارگیل',en:'Coconut Frappe',code:'FR-04',desc:'فراپه با شیر نارگیل؛ استوایی، خامه‌ای و سبک‌تر از فراپه‌های کلاسیک.',tags:['نارگیل','استوایی','Tropical Creamy']}
+  ]
+};
+
+const generalQuestions=[
+  {
+    text:'الان این نوشیدنی رو برای چه چیزی می‌خوای؟',
+    answers:[
+      {title:'یک مکث سبک و آرام',sub:'شفاف، خوش‌عطر و مناسب نوشیدن بدون عجله',line:'icedtea'},
+      {title:'رفع گرما و تشنگی',sub:'خنک، میوه‌ای و سرحال‌کننده',line:'refresher'},
+      {title:'یک تجربه نرم و متفاوت',sub:'کرمی، لایه‌ای و کمی خاص‌تر',line:'cloudy'},
+      {title:'یک انتخاب لذت‌بخش و دسرطور',sub:'غلیظ، یخی و رضایت‌بخش',line:'frappe'}
+    ]
+  },
+  {
+    text:'دوست داری اولین جرعه چه حسی داشته باشه؟',
+    answers:[
+      {title:'شفاف، سبک و چای‌محور',sub:'عطر ظریف چای با پایان تمیز',line:'icedtea'},
+      {title:'گازدار، میوه‌ای و زنده',sub:'طراوت سریع و حس خنکی بیشتر',line:'refresher'},
+      {title:'نرم، کرمی و ابری',sub:'بافت مخملی و لایه‌ای',line:'cloudy'},
+      {title:'غلیظ، یخی و دسرمانند',sub:'بافت حجیم و طعم پررنگ‌تر',line:'frappe'}
+    ]
+  }
+];
+
+const flavorQuestions={
+  icedtea:{
+    text:'کدوم فضای طعمی بیشتر بهت می‌چسبه؟',
+    answers:[
+      {title:'سیب سبز، شفاف و ترد',sub:'تازه، روشن و کمی اسیدی',main:'IT-01',alt:'IT-02'},
+      {title:'هلو و چای سیاه',sub:'میوه‌ای، متعادل و آشنا',main:'IT-02',alt:'IT-01'},
+      {title:'رز، لطیف و معطر',sub:'گلی، روشن و ظریف',main:'IT-03',alt:'IT-04'},
+      {title:'میوه خشک، کاراملی و عمیق',sub:'نرم، گیاهی و متفاوت‌تر',main:'IT-04',alt:'IT-03'}
+    ]
+  },
+  refresher:{
+    text:'کدوم ترکیب بیشتر وسوسه‌ات می‌کنه؟',
+    answers:[
+      {title:'توت‌فرنگی و گیلاس',sub:'میوه‌های قرمز و ترش‌وشیرین',main:'RF-01',alt:'RF-02'},
+      {title:'انبه و شاه‌توت',sub:'میوه‌ای، رنگی و استوایی‌تر',main:'RF-02',alt:'RF-01'},
+      {title:'ریحان ایتالیایی و زنجبیل',sub:'گیاهی، معطر و ماجراجویانه',main:'RF-03',alt:'RF-02'}
+    ]
+  },
+  cloudy:{
+    text:'کدوم شخصیت طعمی رو ترجیح می‌دی؟',
+    answers:[
+      {title:'پسته‌ای و آجیلی',sub:'نرم، متعادل و راحت‌پسند',main:'CL-01',alt:'CL-02'},
+      {title:'زعفرانی و معطر',sub:'لطیف، گرم و با شخصیت ایرانی',main:'CL-02',alt:'CL-01'},
+      {title:'کوکی، شیرین و آشنا',sub:'کرمی‌تر و نزدیک‌تر به دسر',main:'CL-03',alt:'CL-01'},
+      {title:'سبز و ماجراجویانه',sub:'ماچا به‌عنوان انتخاب اصلی؛ اسپیرولینا جسورانه‌تر',main:'CL-04',alt:'CL-05'}
+    ]
+  },
+  frappe:{
+    text:'دسر نوشیدنی‌ات رو با کدوم طعم می‌خوای؟',
+    answers:[
+      {title:'کارامل نمکی',sub:'شیرین، شور و کلاسیک',main:'FR-01',alt:'FR-03'},
+      {title:'ارده، آجیلی و عمیق',sub:'سنگین، گرم و متفاوت',main:'FR-02',alt:'FR-01'},
+      {title:'شکلاتی و کلاسیک',sub:'آشنا، پررنگ و دسرمحور',main:'FR-03',alt:'FR-01'},
+      {title:'نارگیلی و استوایی',sub:'خامه‌ای، متفاوت و کمی سبک‌تر',main:'FR-04',alt:'FR-03'}
+    ]
+  }
+};
+
+let current=0,answersLog=[],chosenLine=null,lastResult=null,quizStarted=false;
+const screens=[...document.querySelectorAll('.screen')],progress=document.getElementById('progress'),stepLabel=document.getElementById('stepLabel');
+function show(id){screens.forEach(s=>s.classList.toggle('active',s.id===id));window.scrollTo({top:0,behavior:'smooth'})}
+function updateProgress(){
+  if(!quizStarted){progress.style.width='0%';stepLabel.textContent='شروع';return}
+  progress.style.width=Math.min(100,((current+1)/3)*100)+'%';
+  stepLabel.textContent=`${Math.min(current+1,3)} از ۳`;
+}
+function getCurrentQuestion(){return current<2?generalQuestions[current]:flavorQuestions[chosenLine]}
+function renderQuestion(){
+  const q=getCurrentQuestion();
+  document.getElementById('qNo').textContent=`QUESTION ${String(current+1).padStart(2,'0')}`;
+  document.getElementById('qText').textContent=q.text;
+  const box=document.getElementById('answers');box.innerHTML='';
+  q.answers.forEach((a,i)=>{
+    const b=document.createElement('button');b.className='answer';
+    b.innerHTML=`<span class="dot">${i+1}</span><span><strong>${a.title}</strong><small>${a.sub}</small></span>`;
+    b.onclick=()=>pick(a);box.appendChild(b)
+  });
+  document.getElementById('backBtn').style.visibility=current===0?'hidden':'visible';
+  updateProgress();
+}
+function pick(a){
+  answersLog=answersLog.slice(0,current);
+  answersLog[current]=a;
+  if(current===0){current=1;renderQuestion();return}
+  if(current===1){chosenLine=a.line;current=2;renderQuestion();return}
+  finish(a);
+}
+function back(){
+  if(current===0)return;
+  current--;
+  answersLog=answersLog.slice(0,current+1);
+  if(current<2)chosenLine=current===1?(answersLog[1]?.line||null):null;
+  renderQuestion();
+}
+function findItem(code){return Object.values(items).flat().find(i=>i.code===code)}
+function finish(flavorAnswer){
+  show('loading');progress.style.width='100%';stepLabel.textContent='نتیجه';
+  setTimeout(()=>showResult(flavorAnswer),700)
+}
+function showResult(flavorAnswer){
+  const main=findItem(flavorAnswer.main);
+  const alt=findItem(flavorAnswer.alt)||items[chosenLine].find(i=>i.code!==main.code)||main;
+  const meta=lineMeta[chosenLine];
+  lastResult={line:chosenLine,main,alt,meta};
+  document.getElementById('lineName').textContent=meta.name;
+  document.getElementById('moodText').textContent=meta.mood;
+  document.getElementById('drinkName').textContent=main.name;
+  document.getElementById('drinkEn').textContent=main.en;
+  document.getElementById('drinkDesc').textContent=main.desc;
+  document.getElementById('orderCode').textContent=main.code;
+  document.getElementById('tags').innerHTML=main.tags.map(t=>`<span class="tag">${t}</span>`).join('');
+  document.getElementById('altText').textContent=`${alt.name} — ${alt.desc}`;
+  document.querySelector('.result-visual').style.background='linear-gradient(135deg,#f1e9df,#e7dcda)';
+  document.getElementById('resultSymbol').textContent=`L SUMMER · ${meta.name}`;
+  show('result')
+}
+function restart(){
+  current=0;answersLog=[];chosenLine=null;lastResult=null;quizStarted=false;
+  updateProgress();show('intro')
+}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
+function openStaff(){if(!lastResult)return;document.getElementById('staffLine').textContent=lastResult.meta.name;document.getElementById('staffName').textContent=lastResult.main.name;document.getElementById('staffEn').textContent=lastResult.main.en;document.getElementById('staffCode').textContent=lastResult.main.code;document.getElementById('staffOverlay').classList.add('active');document.getElementById('staffOverlay').setAttribute('aria-hidden','false')}
+function closeStaff(){document.getElementById('staffOverlay').classList.remove('active');document.getElementById('staffOverlay').setAttribute('aria-hidden','true')}
+function makeShareImage(){return new Promise(resolve=>{const c=document.createElement('canvas');c.width=1080;c.height=1920;const x=c.getContext('2d');x.fillStyle='#471019';x.fillRect(0,0,c.width,c.height);x.fillStyle='rgba(255,255,255,.07)';x.beginPath();x.arc(130,180,260,0,Math.PI*2);x.fill();x.beginPath();x.arc(980,1660,380,0,Math.PI*2);x.fill();x.textAlign='center';x.fillStyle='#f4f1eb';x.font='bold 42px Georgia';x.fillText('L CAFE',540,150);x.font='24px Tahoma';x.fillText('YOUR DAILY PAUSE',540,205);x.font='26px Georgia';x.fillStyle='#d7c6c9';x.fillText('YOUR SUMMER PAUSE',540,465);x.font='bold 88px Georgia';x.fillStyle='#ffffff';x.fillText(lastResult.meta.name,540,595);x.fillStyle='#f4f1eb';x.font='bold 47px Tahoma';wrapCanvasText(x,lastResult.main.name,540,790,820,68);x.fillStyle='#d7c6c9';x.font='30px Georgia';wrapCanvasText(x,lastResult.main.en,540,960,850,48);x.strokeStyle='rgba(255,255,255,.28)';x.strokeRect(190,1120,700,225);x.fillStyle='#d7c6c9';x.font='25px Tahoma';x.fillText('کد سفارش',540,1180);x.fillStyle='#fff';x.font='bold 82px Georgia';x.fillText(lastResult.main.code,540,1287);x.fillStyle='#d7c6c9';x.font='27px Tahoma';x.fillText('Find Your Summer Pause',540,1740);c.toBlob(resolve,'image/png')})}
+function wrapCanvasText(ctx,text,x,y,maxWidth,lineHeight){const words=text.split(' ');let line='';let yy=y;for(let n=0;n<words.length;n++){const test=line+words[n]+' ';if(ctx.measureText(test).width>maxWidth&&n>0){ctx.fillText(line,x,yy);line=words[n]+' ';yy+=lineHeight}else line=test}ctx.fillText(line,x,yy)}
+async function share(){if(!lastResult)return;const blob=await makeShareImage();const file=new File([blob],`L-Cafe-${lastResult.main.code}.png`,{type:'image/png'});const text=`Summer Pause من: ${lastResult.main.name} (${lastResult.main.code})`;if(navigator.canShare&&navigator.canShare({files:[file]})){try{await navigator.share({title:'My Summer Pause',text,files:[file]});return}catch(e){if(e.name==='AbortError')return}}const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('کارت نتیجه ذخیره شد')}
+
+document.getElementById('startBtn').onclick=()=>{current=0;answersLog=[];chosenLine=null;quizStarted=true;renderQuestion();show('quiz')};document.getElementById('backBtn').onclick=back;document.getElementById('restartBtn').onclick=restart;document.getElementById('shareBtn').onclick=share;document.getElementById('showStaff').onclick=openStaff;document.getElementById('staffClose').onclick=closeStaff;document.getElementById('staffOverlay').onclick=e=>{if(e.target.id==='staffOverlay')closeStaff()};updateProgress();
+</script>
+</body>
+</html>
