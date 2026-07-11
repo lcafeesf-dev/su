@@ -54,11 +54,12 @@ h1,h2,h3{margin:0;color:var(--scarlet);line-height:1.6;font-weight:700}h1{font-f
 .menu-overlay{position:fixed;inset:0;z-index:50;display:none;align-items:flex-end;justify-content:center;background:rgba(24,12,15,.68);padding:clamp(0px,2vw,22px);backdrop-filter:blur(11px);-webkit-backdrop-filter:blur(11px)}.menu-overlay.active{display:flex;animation:menuFade .25s ease}.menu-dialog{width:min(1080px,100%);height:min(900px,100%);max-height:100%;display:flex;flex-direction:column;overflow:hidden;background:linear-gradient(145deg,#fbfaf7,#f2ece7);border:1px solid rgba(255,255,255,.5);border-radius:30px 30px 0 0;box-shadow:0 32px 100px rgba(20,6,10,.35);animation:menuRise .35s cubic-bezier(.2,.75,.2,1)}.menu-head{position:relative;flex:0 0 auto;padding:24px 24px 18px;border-bottom:1px solid rgba(71,16,25,.11);background:rgba(251,250,247,.9)}.menu-close{position:absolute;left:20px;top:20px;width:44px;height:44px;min-height:44px;padding:0;border-radius:50%;border:1px solid rgba(71,16,25,.16);background:#fff;color:var(--scarlet);font-size:25px;line-height:1;cursor:pointer}.menu-eyebrow{display:block;color:var(--scarlet-2);font-family:Georgia,serif;font-size:10px;font-weight:700;letter-spacing:2.1px;direction:ltr;text-align:right}.menu-title{margin:4px 0 2px;padding-left:56px;font-size:27px;line-height:1.6}.menu-subtitle{margin:0;color:var(--muted);font-size:12px;line-height:1.9}.menu-tools{display:grid;grid-template-columns:minmax(210px,1fr) auto auto;gap:10px;margin-top:17px;direction:rtl}.menu-search-wrap{position:relative}.menu-search{width:100%;height:48px;padding:0 42px 0 14px;border:1px solid rgba(71,16,25,.15);border-radius:15px;background:#fff;color:var(--ink);font:inherit;outline:none}.menu-search:focus,.menu-sort:focus,.menu-filter:focus-visible,.menu-close:focus-visible,.menu-pick:focus-visible{box-shadow:0 0 0 3px rgba(71,16,25,.13);border-color:var(--scarlet)}.menu-search-icon{position:absolute;right:15px;top:50%;transform:translateY(-50%);color:var(--scarlet);font-size:17px;pointer-events:none}.menu-sort{height:48px;min-width:155px;padding:0 13px;border:1px solid rgba(71,16,25,.15);border-radius:15px;background:#fff;color:var(--ink);font:inherit;outline:none}.menu-filters{display:flex;gap:7px;align-items:center;overflow-x:auto;scrollbar-width:none}.menu-filters::-webkit-scrollbar{display:none}.menu-filter{min-height:44px;padding:0 14px;border:1px solid rgba(71,16,25,.14);border-radius:99px;background:transparent;color:var(--scarlet);white-space:nowrap;cursor:pointer}.menu-filter.active{background:var(--scarlet);border-color:var(--scarlet);color:#fff}.menu-count{padding:12px 24px 0;color:var(--muted);font-size:10.5px}.menu-scroll{flex:1;overflow:auto;overscroll-behavior:contain;padding:15px 24px calc(28px + env(safe-area-inset-bottom));scrollbar-color:rgba(71,16,25,.25) transparent}.menu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.menu-card{min-width:0;display:flex;flex-direction:column;border:1px solid rgba(71,16,25,.12);border-radius:24px;overflow:hidden;background:rgba(255,255,255,.82);box-shadow:0 12px 30px rgba(71,16,25,.07);transition:transform .22s,box-shadow .22s}.menu-card:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(71,16,25,.12)}.menu-card-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--scarlet)}.menu-card-media img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .45s ease}.menu-card:hover .menu-card-media img{transform:scale(1.035)}.menu-card-code{position:absolute;top:12px;left:12px;padding:5px 8px;border-radius:99px;background:rgba(251,250,247,.9);color:var(--scarlet);font-size:9px;font-weight:700;letter-spacing:1px;direction:ltr}.menu-card-body{display:flex;flex:1;flex-direction:column;padding:16px}.menu-card-line{color:var(--muted);font-size:9px;letter-spacing:1.3px;direction:ltr;text-align:right}.menu-card h3{margin:4px 0 0;font-size:17px;line-height:1.8}.menu-card-en{color:var(--sage);font-family:Georgia,serif;font-size:10.5px;line-height:1.6;direction:ltr;text-align:right}.menu-card-desc{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin:10px 0 12px;color:#594d50;font-size:11px;line-height:1.9}.menu-card-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}.menu-card-tag{padding:4px 7px;border-radius:99px;background:#f0e9e5;color:var(--scarlet);font-size:9px}.menu-card-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:13px;border-top:1px solid rgba(71,16,25,.09)}.menu-card-price{color:var(--scarlet);font-size:13px;font-weight:700;white-space:nowrap}.menu-pick{min-height:39px;padding:8px 12px;border:0;border-radius:12px;background:var(--scarlet);color:#fff;font-size:10.5px;cursor:pointer}.menu-empty{grid-column:1/-1;padding:60px 20px;text-align:center;color:var(--muted);font-size:13px;line-height:2}.menu-empty b{display:block;color:var(--scarlet);font-size:18px}.body-menu-open{overflow:hidden;touch-action:none}.body-menu-open .menu-overlay{touch-action:auto}@keyframes menuFade{from{opacity:0}to{opacity:1}}@keyframes menuRise{from{transform:translateY(35px);opacity:.7}to{transform:none;opacity:1}}
 @media (hover:none){.answer:hover{transform:none;border-color:var(--line)}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+.hero{padding-top:18px}.hero .kicker{margin-bottom:8px;color:#7e3d48;font-size:10px;letter-spacing:1.9px}.hero h1{margin-bottom:13px;font-size:43px;line-height:1.04}.intro-lead{max-width:390px;margin:0;color:#55494b;font-size:14px;font-weight:500;line-height:1.95}.intro-panel{margin:18px 0 16px;padding:19px 20px 17px;border-color:rgba(71,16,25,.12);border-radius:24px;background:linear-gradient(145deg,rgba(255,255,255,.94),rgba(247,242,237,.95));box-shadow:0 14px 35px rgba(71,16,25,.075)}.intro-panel:before,.intro-panel:after{display:none}.intro-chip{display:inline-flex;align-items:center;margin-bottom:8px;padding:5px 9px;border-radius:99px;background:#eee5e2;color:var(--scarlet);font-size:9.5px;font-weight:700;line-height:1.5}.intro-copy h3{margin-bottom:5px;font-size:16px;line-height:1.8}.intro-copy p{max-width:410px;font-size:12px;line-height:1.95;color:#65595b}.intro-facts{display:flex;align-items:center;gap:0;margin-top:14px;padding-top:12px;border-top:1px solid rgba(71,16,25,.09);color:var(--muted);font-size:10px}.intro-facts span{display:flex;align-items:center;gap:6px}.intro-facts span:before{content:'';width:5px;height:5px;border-radius:50%;background:var(--scarlet);opacity:.7}.intro-facts span+span{margin-right:14px;padding-right:14px;border-right:1px solid rgba(71,16,25,.12)}.hero .primary{min-height:52px;border-radius:16px;font-size:14px;font-weight:700;box-shadow:0 10px 24px rgba(71,16,25,.18)}.hero .menu-invite{min-height:50px;margin-top:9px;border-radius:16px;background:transparent;box-shadow:none;font-size:13px}.hero .menu-invite:hover{box-shadow:none;background:rgba(255,255,255,.7)}.hero .primary:focus-visible,.hero .menu-invite:focus-visible{outline:3px solid rgba(71,16,25,.17);outline-offset:2px}
 .menu-invite{padding:15px 18px;font-size:14px;font-weight:700;line-height:1.7;text-align:center}.menu-screen{padding-top:18px}.menu-page-head{position:relative;padding:7px 0 18px;border-bottom:1px solid rgba(71,16,25,.11)}.menu-page-head .menu-close{left:0;top:0}.menu-screen .menu-title{margin-top:5px;padding-left:56px}.menu-screen .menu-count{padding:14px 0}.menu-screen .menu-grid{padding-bottom:8px}
 .menu-filters{min-width:0;max-width:100%}
 @media(max-width:760px){.menu-overlay{padding:0}.menu-dialog{border-radius:26px 26px 0 0}.menu-head{padding:20px 18px 14px}.menu-close{left:16px;top:16px}.menu-title{font-size:23px}.menu-tools{grid-template-columns:1fr auto}.menu-search-wrap{grid-column:1/-1}.menu-sort{min-width:140px}.menu-filters{direction:rtl}.menu-count{padding:11px 18px 0}.menu-scroll{padding:13px 18px calc(24px + env(safe-area-inset-bottom))}.menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.menu-card-body{padding:13px}.menu-card h3{font-size:15px}.menu-card-foot{align-items:stretch;flex-direction:column}.menu-pick{width:100%}}
 @media(max-width:760px){.menu-tools{grid-template-columns:minmax(0,1fr) 140px}.menu-sort{grid-column:2;grid-row:2;width:140px;min-width:0}.menu-filters{grid-column:1;grid-row:2}}
-@media(max-width:420px){.topbar{padding-left:12px;padding-right:12px}.brand-lockup{gap:2px}.brand-logo{width:82px;max-height:42px}.campaign-title{font-size:9.8px;letter-spacing:.9px}.step{font-size:9.5px}.menu-grid{grid-template-columns:1fr}.menu-card{display:grid;grid-template-columns:116px minmax(0,1fr)}.menu-card-media{height:100%;min-height:240px;aspect-ratio:auto}.menu-card-body{padding:13px 12px}.menu-card-desc{-webkit-line-clamp:4}.menu-card-foot{gap:8px}.menu-card-price{font-size:12px}}
+@media(max-width:420px){.topbar{padding-left:12px;padding-right:12px}.brand-lockup{gap:2px}.brand-logo{width:82px;max-height:42px}.campaign-title{font-size:9.8px;letter-spacing:.9px}.step{font-size:9.5px}.hero{padding-top:14px}.hero h1{font-size:39px}.intro-lead{font-size:13px}.intro-panel{padding:17px 16px 15px}.intro-facts span+span{margin-right:10px;padding-right:10px}.menu-grid{grid-template-columns:1fr}.menu-card{display:grid;grid-template-columns:116px minmax(0,1fr)}.menu-card-media{height:100%;min-height:240px;aspect-ratio:auto}.menu-card-body{padding:13px 12px}.menu-card-desc{-webkit-line-clamp:4}.menu-card-foot{gap:8px}.menu-card-price{font-size:12px}}
 @media(min-width:700px){body{padding:30px 0}.app{border-radius:32px;min-height:calc(100vh - 60px)}.screen{min-height:calc(100vh - 152px)}.menu-dialog{border-radius:30px}}
 </style>
 </head>
@@ -76,20 +77,24 @@ h1,h2,h3{margin:0;color:var(--scarlet);line-height:1.6;font-weight:700}h1{font-f
   <main>
     <section class="screen active" id="intro">
       <div class="hero">
-        <div class="kicker">L CAFE SUMMER COLLECTION</div>
+        <div class="kicker">SUMMER 1405 · L CAFE</div>
         <h1>FIND YOUR<br>SUMMER PAUSE</h1>
+        <p class="intro-lead">نوشیدنی تابستانی مناسب حال‌وهوای امروزت رو پیدا کن.</p>
         <div class="intro-panel" aria-label="معرفی تجربه تابستانی ال کافه">
-          <div class="intro-meta"><span>SUMMER 1405</span><span>SECRET MENU EXPERIENCE</span></div>
           <div class="intro-main">
             <div class="intro-copy">
-              <h3>یک مسیر کوتاه برای انتخاب آیتم جدید</h3>
-              <p>با پاسخ به دو سؤال ساده، مکث تابستانی امروزتو پیدا کن.</p>
+              <span class="intro-chip">پیشنهاد مخصوص تو</span>
+              <h3>دو انتخاب کوتاه، یک نوشیدنی مناسب</h3>
+              <p>حس و طعم دلخواهت رو انتخاب کن؛ ما نزدیک‌ترین آیتم منو رو بهت پیشنهاد می‌دیم.</p>
             </div>
           </div>
-          <div class="intro-caption">در پایان، نوشیدنی پیشنهادی‌ات را از منوی تابستانی L Cafe می‌بینی.</div>
+          <div class="intro-facts" aria-label="ویژگی‌های تست">
+            <span>۲ سؤال ساده</span>
+            <span>کمتر از یک دقیقه</span>
+          </div>
         </div>
-        <button class="primary" id="startBtn">شروع تست</button>
-        <button class="menu-invite" id="menuOpen" type="button">مشاهده منوی کامل</button>
+        <button class="primary" id="startBtn">پیدا کردن نوشیدنی من</button>
+        <button class="menu-invite" id="menuOpen" type="button">دیدن منوی کامل</button>
       </div>
     </section>
 
@@ -238,16 +243,32 @@ const elements={
 
 function handleProductImageError(event){
   const image=event.currentTarget;
+  const candidates=(image.dataset.candidates || '').split('|').filter(Boolean);
+  const nextIndex=Number(image.dataset.candidateIndex || 0)+1;
+
+  if(nextIndex<candidates.length){
+    image.dataset.candidateIndex=String(nextIndex);
+    image.src=candidates[nextIndex];
+    return;
+  }
+
   if(image.dataset.fallback==='true') return;
   image.dataset.fallback='true';
   image.src=defaultProductImage;
 }
 
 function setProductImage(image,source,name){
+  const normalizedSource=String(source || '').replace(/^\.\//,'');
+  const candidates=normalizedSource
+    ? [...new Set([normalizedSource,`github-upload-ready/${normalizedSource}`])]
+    : [];
+
   image.dataset.fallback='false';
+  image.dataset.candidateIndex='0';
+  image.dataset.candidates=candidates.join('|');
   image.onerror=handleProductImageError;
   image.alt=`تصویر ${name}`;
-  image.src=source || defaultProductImage;
+  image.src=candidates[0] || defaultProductImage;
 }
 
 let menuReturnFocus=null;
