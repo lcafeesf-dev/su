@@ -37,6 +37,7 @@ h1,h2,h3{margin:0;color:var(--scarlet);line-height:1.6;font-weight:700}h1{font-f
 .lead{font-size:15px;line-height:2;color:#4b4042;margin:0 0 22px}
 .intro-panel{margin:22px 0 18px;border:1px solid rgba(71,16,25,.16);background:linear-gradient(145deg,rgba(255,255,255,.86),rgba(244,241,235,.96));border-radius:30px;padding:20px;box-shadow:0 18px 45px rgba(71,16,25,.10);position:relative;overflow:hidden}.intro-panel:before{content:'';position:absolute;width:160px;height:160px;border-radius:50%;left:-70px;top:-80px;background:rgba(192,181,179,.25)}.intro-panel:after{content:'';position:absolute;width:120px;height:120px;border-radius:50%;right:-58px;bottom:-70px;background:rgba(71,16,25,.055)}.intro-meta{display:flex;justify-content:space-between;gap:12px;align-items:center;color:var(--scarlet);font-size:9px;letter-spacing:1.7px;direction:ltr;text-align:left;margin-bottom:16px;position:relative;z-index:1}.intro-main{display:block;position:relative;z-index:1;text-align:right}.intro-copy h3{font-size:17px;margin:0 0 7px;color:var(--scarlet);line-height:1.8}.intro-copy p{font-size:12.5px;line-height:2;color:#5f5557;margin:0}.intro-caption{position:relative;z-index:1;margin-top:14px;padding-top:13px;border-top:1px solid rgba(71,16,25,.11);font-size:11px;color:var(--muted);line-height:1.9;text-align:center}
 .primary,.secondary{width:100%;border-radius:18px;padding:15px 18px;border:0;cursor:pointer;transition:.2s}.primary{background:var(--scarlet);color:#fff;box-shadow:0 10px 26px rgba(71,16,25,.22)}.primary:active{transform:scale(.985)}.secondary{background:#fff;border:1px solid var(--line);color:var(--scarlet);margin-top:10px}
+.menu-invite{width:100%;margin-top:11px;padding:0;border:1px solid rgba(71,16,25,.17);border-radius:20px;background:rgba(255,255,255,.72);color:var(--scarlet);cursor:pointer;overflow:hidden;text-align:right;box-shadow:0 10px 28px rgba(71,16,25,.055);transition:transform .2s,border-color .2s,box-shadow .2s}.menu-invite-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 16px}.menu-invite-copy{display:block;min-width:0}.menu-invite-copy b{display:block;font-size:14px;line-height:1.7}.menu-invite-copy small{display:block;margin-top:1px;color:var(--muted);font-size:10.5px;line-height:1.8}.menu-invite-mark{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--scarlet);color:#fff;font-size:18px;direction:ltr}.menu-invite:hover{transform:translateY(-1px);border-color:rgba(71,16,25,.3);box-shadow:0 15px 34px rgba(71,16,25,.09)}
 .q-wrap{padding-top:8px}.question{font-size:22px;color:var(--scarlet);line-height:1.85;margin:0 0 22px;font-weight:780;text-wrap:balance}.answers{display:grid;gap:12px}.answer{display:flex;align-items:center;gap:13px;text-align:right;width:100%;background:linear-gradient(145deg,#fff,#fbf7f4);border:1px solid var(--line);border-radius:20px;padding:16px 15px;cursor:pointer;color:var(--ink);transition:.2s;box-shadow:0 10px 24px rgba(71,16,25,.045)}.answer:hover{border-color:#bfa8aa;transform:translateY(-1px);box-shadow:0 14px 28px rgba(71,16,25,.07)}.answer .dot{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--ivory);color:var(--scarlet);font-size:14px;font-weight:700;line-height:1;flex:0 0 auto}.answer .desc{display:block;color:var(--ink);font-size:15px;line-height:1.9;font-weight:500;letter-spacing:0;overflow-wrap:break-word;word-break:normal}
 .back{background:none;border:0;color:var(--muted);padding:10px 0;margin-top:12px;cursor:pointer}
 .loading{display:grid;place-items:center;text-align:center;padding-top:90px}.loader{width:82px;height:82px;border-radius:50%;border:1px solid var(--pink);position:relative;margin-bottom:24px}.loader:before,.loader:after{content:'';position:absolute;inset:9px;border-radius:50%;border:1px solid rgba(71,16,25,.25);animation:pulse 1.6s infinite}.loader:after{inset:21px;animation-delay:.35s}@keyframes pulse{50%{transform:scale(1.18);opacity:.25}}
@@ -50,10 +51,15 @@ h1,h2,h3{margin:0;color:var(--scarlet);line-height:1.6;font-weight:700}h1{font-f
 .footer{padding:18px 22px calc(26px + env(safe-area-inset-bottom));text-align:center;font-size:10px;color:#9a9092}.footer b{color:var(--scarlet)}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:#251d1f;color:#fff;padding:10px 16px;border-radius:99px;font-size:12px;opacity:0;pointer-events:none;transition:.25s;z-index:20}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 .share-overlay{position:fixed;inset:0;background:rgba(25,15,18,.94);z-index:40;display:none;padding:calc(18px + env(safe-area-inset-top)) 18px calc(18px + env(safe-area-inset-bottom));overflow:auto}.share-overlay.active{display:flex;flex-direction:column;align-items:center}.share-toolbar{width:min(430px,100%);display:flex;align-items:center;justify-content:space-between;color:#fff;margin-bottom:12px}.share-toolbar button{width:42px;height:42px;min-height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;font-size:22px}.share-toolbar span{font-size:12px}.share-preview{width:min(430px,100%);border-radius:22px;display:block;background:#471019;box-shadow:0 20px 60px rgba(0,0,0,.35)}.share-help{width:min(430px,100%);color:#eadfe1;text-align:center;font-size:12px;line-height:1.9;margin:14px 0}.share-download{display:block;width:min(430px,100%);text-align:center;text-decoration:none;background:#f4f1eb;color:#471019;padding:14px 18px;border-radius:16px;font-weight:700}.share-copy{width:min(430px,100%);margin-top:10px;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:16px;padding:13px}
+.menu-overlay{position:fixed;inset:0;z-index:50;display:none;align-items:flex-end;justify-content:center;background:rgba(24,12,15,.68);padding:clamp(0px,2vw,22px);backdrop-filter:blur(11px);-webkit-backdrop-filter:blur(11px)}.menu-overlay.active{display:flex;animation:menuFade .25s ease}.menu-dialog{width:min(1080px,100%);height:min(900px,100%);max-height:100%;display:flex;flex-direction:column;overflow:hidden;background:linear-gradient(145deg,#fbfaf7,#f2ece7);border:1px solid rgba(255,255,255,.5);border-radius:30px 30px 0 0;box-shadow:0 32px 100px rgba(20,6,10,.35);animation:menuRise .35s cubic-bezier(.2,.75,.2,1)}.menu-head{position:relative;flex:0 0 auto;padding:24px 24px 18px;border-bottom:1px solid rgba(71,16,25,.11);background:rgba(251,250,247,.9)}.menu-close{position:absolute;left:20px;top:20px;width:44px;height:44px;min-height:44px;padding:0;border-radius:50%;border:1px solid rgba(71,16,25,.16);background:#fff;color:var(--scarlet);font-size:25px;line-height:1;cursor:pointer}.menu-eyebrow{display:block;color:var(--scarlet-2);font-family:Georgia,serif;font-size:10px;font-weight:700;letter-spacing:2.1px;direction:ltr;text-align:right}.menu-title{margin:4px 0 2px;padding-left:56px;font-size:27px;line-height:1.6}.menu-subtitle{margin:0;color:var(--muted);font-size:12px;line-height:1.9}.menu-tools{display:grid;grid-template-columns:minmax(210px,1fr) auto auto;gap:10px;margin-top:17px;direction:rtl}.menu-search-wrap{position:relative}.menu-search{width:100%;height:48px;padding:0 42px 0 14px;border:1px solid rgba(71,16,25,.15);border-radius:15px;background:#fff;color:var(--ink);font:inherit;outline:none}.menu-search:focus,.menu-sort:focus,.menu-filter:focus-visible,.menu-close:focus-visible,.menu-pick:focus-visible{box-shadow:0 0 0 3px rgba(71,16,25,.13);border-color:var(--scarlet)}.menu-search-icon{position:absolute;right:15px;top:50%;transform:translateY(-50%);color:var(--scarlet);font-size:17px;pointer-events:none}.menu-sort{height:48px;min-width:155px;padding:0 13px;border:1px solid rgba(71,16,25,.15);border-radius:15px;background:#fff;color:var(--ink);font:inherit;outline:none}.menu-filters{display:flex;gap:7px;align-items:center;overflow-x:auto;scrollbar-width:none}.menu-filters::-webkit-scrollbar{display:none}.menu-filter{min-height:44px;padding:0 14px;border:1px solid rgba(71,16,25,.14);border-radius:99px;background:transparent;color:var(--scarlet);white-space:nowrap;cursor:pointer}.menu-filter.active{background:var(--scarlet);border-color:var(--scarlet);color:#fff}.menu-count{padding:12px 24px 0;color:var(--muted);font-size:10.5px}.menu-scroll{flex:1;overflow:auto;overscroll-behavior:contain;padding:15px 24px calc(28px + env(safe-area-inset-bottom));scrollbar-color:rgba(71,16,25,.25) transparent}.menu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.menu-card{min-width:0;display:flex;flex-direction:column;border:1px solid rgba(71,16,25,.12);border-radius:24px;overflow:hidden;background:rgba(255,255,255,.82);box-shadow:0 12px 30px rgba(71,16,25,.07);transition:transform .22s,box-shadow .22s}.menu-card:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(71,16,25,.12)}.menu-card-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--scarlet)}.menu-card-media img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .45s ease}.menu-card:hover .menu-card-media img{transform:scale(1.035)}.menu-card-code{position:absolute;top:12px;left:12px;padding:5px 8px;border-radius:99px;background:rgba(251,250,247,.9);color:var(--scarlet);font-size:9px;font-weight:700;letter-spacing:1px;direction:ltr}.menu-card-body{display:flex;flex:1;flex-direction:column;padding:16px}.menu-card-line{color:var(--muted);font-size:9px;letter-spacing:1.3px;direction:ltr;text-align:right}.menu-card h3{margin:4px 0 0;font-size:17px;line-height:1.8}.menu-card-en{color:var(--sage);font-family:Georgia,serif;font-size:10.5px;line-height:1.6;direction:ltr;text-align:right}.menu-card-desc{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin:10px 0 12px;color:#594d50;font-size:11px;line-height:1.9}.menu-card-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}.menu-card-tag{padding:4px 7px;border-radius:99px;background:#f0e9e5;color:var(--scarlet);font-size:9px}.menu-card-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:13px;border-top:1px solid rgba(71,16,25,.09)}.menu-card-price{color:var(--scarlet);font-size:13px;font-weight:700;white-space:nowrap}.menu-pick{min-height:39px;padding:8px 12px;border:0;border-radius:12px;background:var(--scarlet);color:#fff;font-size:10.5px;cursor:pointer}.menu-empty{grid-column:1/-1;padding:60px 20px;text-align:center;color:var(--muted);font-size:13px;line-height:2}.menu-empty b{display:block;color:var(--scarlet);font-size:18px}.body-menu-open{overflow:hidden;touch-action:none}.body-menu-open .menu-overlay{touch-action:auto}@keyframes menuFade{from{opacity:0}to{opacity:1}}@keyframes menuRise{from{transform:translateY(35px);opacity:.7}to{transform:none;opacity:1}}
 @media (hover:none){.answer:hover{transform:none;border-color:var(--line)}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-@media(max-width:420px){.topbar{padding-left:12px;padding-right:12px}.brand-lockup{gap:2px}.brand-logo{width:82px;max-height:42px}.campaign-title{font-size:9.8px;letter-spacing:.9px}.step{font-size:9.5px}}
-@media(min-width:700px){body{padding:30px 0}.app{border-radius:32px;min-height:calc(100vh - 60px)}.screen{min-height:calc(100vh - 152px)}}
+.menu-invite{padding:15px 18px;font-size:14px;font-weight:700;line-height:1.7;text-align:center}.menu-screen{padding-top:18px}.menu-page-head{position:relative;padding:7px 0 18px;border-bottom:1px solid rgba(71,16,25,.11)}.menu-page-head .menu-close{left:0;top:0}.menu-screen .menu-title{margin-top:5px;padding-left:56px}.menu-screen .menu-count{padding:14px 0}.menu-screen .menu-grid{padding-bottom:8px}
+.menu-filters{min-width:0;max-width:100%}
+@media(max-width:760px){.menu-overlay{padding:0}.menu-dialog{border-radius:26px 26px 0 0}.menu-head{padding:20px 18px 14px}.menu-close{left:16px;top:16px}.menu-title{font-size:23px}.menu-tools{grid-template-columns:1fr auto}.menu-search-wrap{grid-column:1/-1}.menu-sort{min-width:140px}.menu-filters{direction:rtl}.menu-count{padding:11px 18px 0}.menu-scroll{padding:13px 18px calc(24px + env(safe-area-inset-bottom))}.menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.menu-card-body{padding:13px}.menu-card h3{font-size:15px}.menu-card-foot{align-items:stretch;flex-direction:column}.menu-pick{width:100%}}
+@media(max-width:760px){.menu-tools{grid-template-columns:minmax(0,1fr) 140px}.menu-sort{grid-column:2;grid-row:2;width:140px;min-width:0}.menu-filters{grid-column:1;grid-row:2}}
+@media(max-width:420px){.topbar{padding-left:12px;padding-right:12px}.brand-lockup{gap:2px}.brand-logo{width:82px;max-height:42px}.campaign-title{font-size:9.8px;letter-spacing:.9px}.step{font-size:9.5px}.menu-grid{grid-template-columns:1fr}.menu-card{display:grid;grid-template-columns:116px minmax(0,1fr)}.menu-card-media{height:100%;min-height:240px;aspect-ratio:auto}.menu-card-body{padding:13px 12px}.menu-card-desc{-webkit-line-clamp:4}.menu-card-foot{gap:8px}.menu-card-price{font-size:12px}}
+@media(min-width:700px){body{padding:30px 0}.app{border-radius:32px;min-height:calc(100vh - 60px)}.screen{min-height:calc(100vh - 152px)}.menu-dialog{border-radius:30px}}
 </style>
 </head>
 <body>
@@ -83,7 +89,18 @@ h1,h2,h3{margin:0;color:var(--scarlet);line-height:1.6;font-weight:700}h1{font-f
           <div class="intro-caption">در پایان، نوشیدنی پیشنهادی‌ات را از منوی تابستانی L Cafe می‌بینی.</div>
         </div>
         <button class="primary" id="startBtn">شروع تست</button>
+        <button class="menu-invite" id="menuOpen" type="button">مشاهده منوی کامل</button>
       </div>
+    </section>
+
+    <section class="screen menu-screen" id="fullMenu">
+      <header class="menu-page-head">
+        <button class="menu-close" id="menuClose" type="button" aria-label="بازگشت به صفحه اول">×</button>
+        <span class="menu-eyebrow">L CAFE · SUMMER 1405</span>
+        <h2 class="menu-title" id="menuTitle">منوی کامل تابستان</h2>
+      </header>
+      <div class="menu-count" id="menuCount" aria-live="polite"></div>
+      <div class="menu-grid" id="menuGrid"></div>
     </section>
 
     <section class="screen" id="quiz">
@@ -176,269 +193,11 @@ const lineMeta={
   }
 };
 
-const items={
-  "icedtea": [
-    {
-      "name": "آیس‌تی اپل پارادایس",
-      "en": "Apple Paradise Iced Tea",
-      "code": "IT-01",
-      "image": "assets/products/it-01.jpg",
-      "price": "۳۵۰٬۰۰۰ تومان",
-      "sense": "سبک، شفاف و خوش‌عطر",
-      "moodEn": "Clean · Crisp · Tea-led",
-      "profile": "سیب سبز و چای سرد شفاف؛ با اسیدیته ملایم، رایحه روشن و پایان طعمی تازه",
-      "texture": "شفاف، خنک، سبک و ترد",
-      "desc": "چای سرد شفاف با حس سیب تازه؛ انتخابی سبک، روشن و خوش‌عطر برای وقتی که نوشیدنی‌ای خنک و ساده می‌خوای.",
-      "tags": [
-        "سیب",
-        "شفاف",
-        "باغ تابستانی"
-      ],
-      "cardTitle": "یک مکث سبک، شفاف و خوش‌عطر",
-      "cardText": "چای سرد شفاف با حس سیب سبز؛ برای وقتی که نوشیدنی سبک، روشن و خوش‌عطر می‌خوای.",
-      "visual": "سبز روشن / عاجی / حس باغ تابستانی"
-    },
-    {
-      "name": "آیس‌تی پیچ بلک",
-      "en": "Peach Black Tea Iced",
-      "code": "IT-02",
-      "image": "assets/products/it-02.jpg",
-      "price": "۳۵۰٬۰۰۰ تومان",
-      "sense": "سبک، میوه‌ای و متعادل",
-      "moodEn": "Fruity · Balanced · Tea-led",
-      "profile": "هلو و چای سیاه؛ میوه‌ای، متعادل، آشنا و تابستانی",
-      "texture": "شفاف، خنک، نرم و متعادل",
-      "desc": "ترکیب چای سرد سیاه و هلو با بافتی خنک و طعمی آشنا؛ انتخابی خوش‌عطر، متعادل و تابستانی برای کسانی که نوشیدنی‌ای امن و دلنشین میخواهند.",
-      "tags": [
-        "هلویی",
-        "تابستان گرم",
-        "متعادل"
-      ],
-      "cardTitle": "چای سردی آشنا، میوه‌ای و متعادل",
-      "cardText": "ترکیب چای سیاه و هلو با بافت خنک؛ انتخابی امن، خوش‌طعم و تابستانی برای اکثر سلیقه‌ها.",
-      "visual": "هلویی / کهربایی / تابستان گرم"
-    }
-  ],
-  "refresher": [
-    {
-      "name": "رفرشر انبه و شاهتوت",
-      "en": "Mango & Blackberry Refresher",
-      "code": "RF-02",
-      "image": "assets/products/rf-02.jpg",
-      "price": "۳۲۰٬۰۰۰ تومان",
-      "sense": "خنک، رنگی و میوه‌ای",
-      "moodEn": "Tropical · Fruity · Sparkling",
-      "profile": "انبه، شاه‌توت، عسل و مرکبات؛ گازدار، رنگی و طراوت‌بخش",
-      "texture": "گازدار، میوه‌ای، سبک و پرطراوت",
-      "desc": "ترکیب انبه و شاهتوت با سودا؛ نوشیدنی‌ای ملس، خنک و سرزنده با طعمی میوه‌ای، مناسب روزهای گرم و لحظه‌هایی که دنبال یک انتخاب شاد تر هستی.",
-      "tags": [
-        "ملس",
-        "انبه",
-        "استوایی"
-      ],
-      "cardTitle": "رنگی، میوه‌ای و کاملاً تابستانی",
-      "cardText": "ترکیب انبه و شاه‌توت با مرکبات؛ انتخابی شادتر، رنگی‌تر و خنک برای روزهای گرم.",
-      "visual": "زرد انبه / بنفش شاه‌توت / گرمسیری"
-    },
-    {
-      "name": "رفرشر جینجر بیزل",
-      "en": "Ginger Basil Refresher",
-      "code": "RF-03",
-      "image": "assets/products/rf-03.jpg",
-      "price": "۳۲۰٬۰۰۰ تومان",
-      "sense": "خنک، گیاهی و جسور",
-      "moodEn": "Refresh · Ginger · Sparkling",
-      "profile": "ریحان تازه، زنجبیل، لیموترش و سودا؛ گیاهی، تیز، معطر و متفاوت",
-      "texture": "گازدار، معطر، تیز و تازه",
-      "desc": "ترکیب زنجبیل و ریحان ایتالیایی با سودا؛ ترکیبی تازه، طبیعی و متفاوت با تندی ملایم و طعمی سرزنده، برای کسانی که دنبال نوشیدنی‌ای خاص‌تر و خنک‌تر هستند.",
-      "tags": [
-        "ریحان",
-        "زنجبیل",
-        "تازه"
-      ],
-      "cardTitle": "انتخاب جسورانه برای یک مکث خنک",
-      "cardText": "ریحان ایتالیایی و زنجبیل با سودا؛ مناسب کسی که طعم‌های تازه، گیاهی و متفاوت را دوست دارد.",
-      "visual": "سبز ریحان / زنجبیل / سودا"
-    }
-  ],
-  "cloudy": [
-    {
-      "name": "کلودی پسته",
-      "en": "Pistachio Cloudy",
-      "code": "CL-01",
-      "image": "assets/products/cl-01.jpg",
-      "price": "۴۳۰٬۰۰۰ تومان",
-      "sense": "نرم، کرمی و قهوه‌دار",
-      "moodEn": "Soft · Creamy · Gentle Espresso",
-      "profile": "کرم پسته با لایه‌ای نرم از اسپرسو؛ آجیلی، مخملی، متعادل و قهوه‌دار بدون تلخی تند",
-      "texture": "مخملی، کرمی، لایه‌ای با رد لطیف اسپرسو",
-      "desc": "کلودی پسته با بافتی نرم و کرمی؛ ترکیبی از طعم اصیل پسته و حضور ملایم اسپرسو که به نوشیدنی عمق، تعادل و لطافتی آرام می‌دهد.",
-      "tags": [
-        "پسته",
-        "کرمی",
-        "اسپرسو آرام"
-      ],
-      "cardTitle": "پسته، کرم و یک رد لطیف اسپرسو",
-      "cardText": "کلودی پسته با بافت نرم و مخملی؛ طعم آجیلی پسته با حضور ملایم اسپرسو که به نوشیدنی عمق می‌دهد، نه تلخی سنگین.",
-      "visual": "سبز پسته‌ای / کرم / حس لوکس ایرانی"
-    },
-    {
-      "name": "کلودی کوکی",
-      "en": "Cookie Cloudy",
-      "code": "CL-03",
-      "image": "assets/products/cl-03.jpg",
-      "price": "۴۳۰٬۰۰۰ تومان",
-      "sense": "نرم، شیرین و قهوه‌دار",
-      "moodEn": "Sweet · Creamy · Espresso Dessert",
-      "profile": "کرم کوکی با حضور نرم اسپرسو؛ شیرین، دسرگونه، آشنا و قهوه‌دار",
-      "texture": "کرمی، شیرین‌تر، دسرمانند با عمق ملایم قهوه",
-      "desc": "انتخابی نرم، شیرین و کرمی، با طعم کوکی در مرکز و اسپرسویی ملایم در پس‌زمینه که به نوشیدنی عمق می‌دهد.",
-      "tags": [
-        "کوکی",
-        "کرمی",
-        "اسپرسو آرام"
-      ],
-      "cardTitle": "کوکی، کرم و عمق آرام اسپرسو",
-      "cardText": "کلودی کوکی برای وقتی که نوشیدنی نرم، شیرین‌تر و نزدیک به دسر می‌خوای؛ اسپرسو در پس‌زمینه به طعم کوکی عمق می‌دهد.",
-      "visual": "کرم / کوکی / حس دسر"
-    }
-  ],
-  "frappe": [
-    {
-      "name": "فراپه کارامل نمکی",
-      "en": "Salted Caramel Frappe",
-      "code": "FR-01",
-      "image": "assets/products/fr-01.jpg",
-      "price": "۳۷۰٬۰۰۰ تومان",
-      "sense": "غلیظ، یخی و قهوه‌دار",
-      "moodEn": "Rich · Icy · Coffee Caramel",
-      "profile": "اسپرسو، کارامل نمکی، شیرینی و شوری متعادل؛ قهوه‌دار، کلاسیک و دسرمحور",
-      "texture": "غلیظ، یخی، کرمی با عمق قهوه",
-      "desc": "نوشیدنی ای کرمی و یخی با ترکیب کارامل شیرین‌وشور و پایه قهوه، انتخابی کلاسیک، هارمونیک و لذت‌بخش.",
-      "tags": [
-        "کارامل نمکی",
-        "شیرین",
-        "کلاسیک"
-      ],
-      "cardTitle": "یک دسر یخی با کارامل نمکی و عمق قهوه",
-      "cardText": "فراپه کارامل نمکی با بافت کرمی و یخی؛ کارامل شیرین‌وشور روی پایه قهوه‌ای، انتخابی کلاسیک، سنگین و لذت‌بخش.",
-      "visual": "کاراملی / قهوه‌ای گرم / دسر کلاسیک"
-    },
-    {
-      "name": "فراپه ارده",
-      "en": "Tahini Frappe",
-      "code": "FR-02",
-      "image": "assets/products/fr-02.jpg",
-      "price": "۳۷۰٬۰۰۰ تومان",
-      "sense": "غلیظ، آجیلی و قهوه‌دار",
-      "moodEn": "Nutty · Deep · Coffee Dessert",
-      "profile": "اسپرسو و ارده دوآتش؛ آجیلی، عمیق، مدرن و قهوه‌دار با شخصیت ایرانی",
-      "texture": "غلیظ، کرمی، آجیلی با عمق قهوه",
-      "desc": "با شخصیتی متناقض میان یخ و آتش، ترکیبی از بافت یخی و طعم گرم و عمیق ارده است؛ متفاوت و مناسب کسانی که دنبال انتخابی خاص‌تر از طعم ‌های کلاسیک هستند.",
-      "tags": [
-        "ارده",
-        "اسپرسو",
-        "ژلاتو"
-      ],
-      "cardTitle": "ارده، قهوه و اجرای یخی مدرن",
-      "cardText": "فراپه ارده با شخصیتی متناقص میان یخ و آتش؛ حضور اسپرسو طعم ارده را جدی‌تر و مدرن‌تر می‌کند، مناسب انتخاب‌های خاص‌تر.",
-      "visual": "کرم-کنجدی / سنتی مدرن / لوکس ایرانی"
-    }
-  ]
-};
+const items={"icedtea":[{"name":"آیس‌تی اپل پارادایس","en":"Apple Paradise Iced Tea","code":"IT-01","image":"assets/products/it-01.jpg","price":"350000 تومان","sense":"Clean · Crisp · Tea-led","moodEn":"Clean · Crisp · Tea-led","desc":"چای سرد شفاف با حس سیب تازه؛ انتخابی سبک، روشن و خوش‌عطر برای وقتی که نوشیدنی‌ای خنک و ساده می‌خوای.","tags":["سیب","شفاف","باغ تابستانی"]},{"name":"آیس‌تی پیچ بلک","en":"Peach Black Tea Iced","code":"IT-02","image":"assets/products/it-02.jpg","price":"350000 تومان","sense":"Fruity · Balanced · Tea-led","moodEn":"Fruity · Balanced · Tea-led","desc":"ترکیب چای سرد سیاه و هلو با بافتی خنک و طعمی آشنا؛ انتخابی خوش‌عطر، متعادل و تابستانی برای کسانی که نوشیدنی‌ای امن و دلنشین میخواهند.","tags":["هلویی","تابستان گرم","متعادل"]}],"refresher":[{"name":"رفرشر انبه و شاهتوت","en":"Mango \u0026 Blackberry Refresher","code":"RF-02","image":"assets/products/rf-02.jpg","price":"320000 تومان","sense":"Tropical · Fruity · Sparkling","moodEn":"Tropical · Fruity · Sparkling","desc":"ترکیب انبه و شاهتوت با سودا؛ نوشیدنی‌ای ملس، خنک و سرزنده با طعمی میوه‌ای، مناسب روزهای گرم و لحظه‌هایی که دنبال یک انتخاب شاد تر هستی.","tags":["ملس","انبه","استوایی"]},{"name":"رفرشر جینجر بیزل","en":"Ginger Basil Refresher","code":"RF-03","image":"assets/products/rf-03.jpg","price":"320000 تومان","sense":"Refresh · Ginger · Sparkling","moodEn":"Refresh · Ginger · Sparkling","desc":"ترکیب زنجبیل و ریحان ایتالیایی با سودا؛ ترکیبی تازه، طبیعی و متفاوت با تندی ملایم و طعمی سرزنده، برای کسانی که دنبال نوشیدنی‌ای خاص‌تر و خنک‌تر هستند.","tags":["ریحان","زنجبیل","تازه"]}],"cloudy":[{"name":"کلودی پسته","en":"Pistachio Cloudy","code":"CL-01","image":"assets/products/cl-01.jpg","price":"430000 تومان","sense":"Soft · Creamy · Gentle Espresso","moodEn":"Soft · Creamy · Gentle Espresso","desc":"کلودی پسته با بافتی نرم و کرمی؛ ترکیبی از طعم اصیل پسته و حضور ملایم اسپرسو که به نوشیدنی عمق، تعادل و لطافتی آرام می‌دهد.","tags":["پسته","کرمی","اسپرسو آرام"]},{"name":"کلودی کوکی","en":"Cookie Cloudy","code":"CL-03","image":"assets/products/cl-03.jpg","price":"430000 تومان","sense":"Sweet · Creamy · Espresso Dessert","moodEn":"Sweet · Creamy · Espresso Dessert","desc":"انتخابی نرم، شیرین و کرمی، با طعم کوکی در مرکز و اسپرسویی ملایم در پس‌زمینه که به نوشیدنی عمق می‌دهد.","tags":["کوکی","کرمی","اسپرسو آرام"]}],"frappe":[{"name":"فراپه کارامل نمکی","en":"Salted Caramel Frappe","code":"FR-01","image":"assets/products/fr-01.jpg","price":"370000 تومان","sense":"Rich · Icy · Coffee Caramel","moodEn":"Rich · Icy · Coffee Caramel","desc":"نوشیدنی ای کرمی و یخی با ترکیب کارامل شیرین‌وشور و پایه قهوه، انتخابی کلاسیک، هارمونیک و لذت‌بخش.","tags":["کارامل نمکی","شیرین","کلاسیک"]},{"name":"فراپه ارده","en":"Tahini Frappe","code":"FR-02","image":"assets/products/fr-02.jpg","price":"370000 تومان","sense":"Nutty · Deep · Coffee Dessert","moodEn":"Nutty · Deep · Coffee Dessert","desc":"با شخصیتی متناقض میان یخ و آتش، ترکیبی از بافت یخی و طعم گرم و عمیق ارده است؛ متفاوت و مناسب کسانی که دنبال انتخابی خاص‌تر از طعم ‌های کلاسیک هستند.","tags":["ارده","اسپرسو","ژلاتو"]}]}
 
-const lineQuestion={
-  "text": "الان از نوشیدنی‌ات چه جور مکثی می‌خوای؟",
-  "answers": [
-    {
-      "sub": "برای مکثی خوش عطر، شفاف و خنک",
-      "line": "icedtea"
-    },
-    {
-      "sub": "برای مکثی میوه ای، سرزنده و تابستونی",
-      "line": "refresher"
-    },
-    {
-      "sub": "برای مکثی خاص، لطیف و ابری",
-      "line": "cloudy"
-    },
-    {
-      "sub": "برای مکثی خامه ای، یخی و کلاسیک",
-      "line": "frappe"
-    }
-  ]
-};
+const lineQuestion={"text":"الان از نوشیدنی‌ات چه جور حسی می‌خوای؟","answers":[{"sub":"خوش عطر و شفاف","line":"icedtea"},{"sub":"میوه ای و سرزنده","line":"refresher"},{"sub":"ابری و لطیف","line":"cloudy"},{"sub":"برفی و شیرین","line":"frappe"}]}
 
-const flavorQuestions={
-  "icedtea": {
-    "text": "این مکث سبک رو با کدوم حس کامل کنیم؟",
-    "answers": [
-      {
-        "sub": "برای حسی آرام, روشن و گرم",
-        "line": "icedtea",
-        "main": "IT-01",
-        "alt": "IT-02"
-      },
-      {
-        "sub": "برای حسی پرانرژی، لطیف و ملس",
-        "line": "icedtea",
-        "main": "IT-02",
-        "alt": "IT-01"
-      }
-    ]
-  },
-  "refresher": {
-    "text": "این مکث میوه ای رو با کدوم حس کامل کنیم؟",
-    "answers": [
-      {
-        "sub": "برای حسی پرطراوت، استوایی و کمی زنده‌تر",
-        "line": "refresher",
-        "main": "RF-02",
-        "alt": "RF-03"
-      },
-      {
-        "sub": "برای حسی معطر، متفاوت و با یک ضربه تازه",
-        "line": "refresher",
-        "main": "RF-03",
-        "alt": "RF-02"
-      }
-    ]
-  },
-  "cloudy": {
-    "text": "این مکث ابری رو با کدوم حس کامل کنیم؟",
-    "answers": [
-      {
-        "sub": "برای حسی آرام، لوکس و با عمق خیلی ملایم",
-        "line": "cloudy",
-        "main": "CL-01",
-        "alt": "CL-03"
-      },
-      {
-        "sub": "برای حسی کرمی، متناقص میان لطافت و تردی",
-        "line": "cloudy",
-        "main": "CL-03",
-        "alt": "CL-01"
-      }
-    ]
-  },
-  "frappe": {
-    "text": "این مکث خامه ای رو با کدوم حس کامل کنیم؟",
-    "answers": [
-      {
-        "sub": "برای حسی شیرین, هارمونیک و آشنا",
-        "line": "frappe",
-        "main": "FR-01",
-        "alt": "FR-02"
-      },
-      {
-        "sub": "برای حسی عمیق میان خورشید و دریا",
-        "line": "frappe",
-        "main": "FR-02",
-        "alt": "FR-01"
-      }
-    ]
-  }
-};
+const flavorQuestions={"icedtea":{"text":"این حس خوش عطر چه نوتی داشته باشه؟","answers":[{"sub":" آرام و گرم","line":"icedtea","main":"IT-01","alt":"IT-02"},{"sub":"پرانرژی و ملس","line":"icedtea","main":"IT-02","alt":"IT-01"}]},"refresher":{"text":"این حس میوه ای چه نوتی داشته باشه؟","answers":[{"sub":"پرطراوت و استوایی ","line":"refresher","main":"RF-02","alt":"RF-03"},{"sub":"معطر و متفاوت","line":"refresher","main":"RF-03","alt":"RF-02"}]},"cloudy":{"text":"این حس ابری چه نوتی داشته باشه؟","answers":[{"sub":"لوکس و اصیل","line":"cloudy","main":"CL-01","alt":"CL-03"},{"sub":"تضاد لطافت و تردی ","line":"cloudy","main":"CL-03","alt":"CL-01"}]},"frappe":{"text":"این حس برفی چه نوتی داشته باشه؟","answers":[{"sub":" هارمونیک و آشنا","line":"frappe","main":"FR-01","alt":"FR-02"},{"sub":"گرم و جنوبی","line":"frappe","main":"FR-02","alt":"FR-01"}]}}
 
 const defaultProductImage='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20720%20720%22%3E%3Crect%20width%3D%22720%22%20height%3D%22720%22%20fill%3D%22%23471019%22%2F%3E%3Ccircle%20cx%3D%22360%22%20cy%3D%22330%22%20r%3D%22214%22%20fill%3D%22%23f4f1eb%22%2F%3E%3Cpath%20d%3D%22M250%20260h220l-32%20230c-4%2028-28%2050-56%2050h-44c-28%200-52-22-56-50l-32-230Z%22%20fill%3D%22%23ded2cd%22%2F%3E%3Cpath%20d%3D%22M286%20332c45%2023%20103%2023%20148%200%22%20fill%3D%22none%22%20stroke%3D%22%23471019%22%20stroke-width%3D%2214%22%20stroke-linecap%3D%22round%22%2F%3E%3Ctext%20x%3D%22360%22%20y%3D%22635%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2234%22%20letter-spacing%3D%226%22%20fill%3D%22%23f4f1eb%22%3EL%20CAFE%3C%2Ftext%3E%3C%2Fsvg%3E';
 const defaultProductPrice='۲۲۰٬۰۰۰ تومان';
@@ -470,7 +229,11 @@ const elements={
   shareOverlay:document.getElementById('shareOverlay'),
   shareClose:document.getElementById('shareClose'),
   sharePreview:document.getElementById('sharePreview'),
-  shareDownload:document.getElementById('shareDownload')
+  shareDownload:document.getElementById('shareDownload'),
+  menuOpen:document.getElementById('menuOpen'),
+  menuClose:document.getElementById('menuClose'),
+  menuCount:document.getElementById('menuCount'),
+  menuGrid:document.getElementById('menuGrid')
 };
 
 function handleProductImageError(event){
@@ -485,6 +248,114 @@ function setProductImage(image,source,name){
   image.onerror=handleProductImageError;
   image.alt=`تصویر ${name}`;
   image.src=source || defaultProductImage;
+}
+
+let menuReturnFocus=null;
+
+function menuPriceValue(item){
+  const normalized=String(item.price || defaultProductPrice)
+    .replace(/[۰-۹]/g,digit=>'۰۱۲۳۴۵۶۷۸۹'.indexOf(digit))
+    .replace(/[^0-9]/g,'');
+  return Number(normalized) || 0;
+}
+
+function chooseMenuItem(line,item){
+  closeFullMenu(false);
+  clearPendingResult();
+  current=0;
+  answersLog=[];
+  chosenLine=line;
+  lastResult=null;
+  quizStarted=false;
+  showResult({line,main:item.code},true);
+}
+
+function createMenuCard(line,item){
+  const article=document.createElement('article');
+  article.className='menu-card';
+
+  const media=document.createElement('div');
+  media.className='menu-card-media';
+  const image=document.createElement('img');
+  image.loading='lazy';
+  image.decoding='async';
+  setProductImage(image,item.image,item.name);
+  const code=document.createElement('span');
+  code.className='menu-card-code';
+  code.textContent=item.code;
+  media.append(image,code);
+
+  const body=document.createElement('div');
+  body.className='menu-card-body';
+  const lineName=document.createElement('span');
+  lineName.className='menu-card-line';
+  lineName.textContent=lineMeta[line]?.name || line;
+  const title=document.createElement('h3');
+  title.textContent=item.name;
+  const englishName=document.createElement('div');
+  englishName.className='menu-card-en';
+  englishName.textContent=item.en;
+  const description=document.createElement('p');
+  description.className='menu-card-desc';
+  description.textContent=item.desc || 'یک انتخاب ویژه از کالکشن تابستانی ال‌کافه.';
+  const tags=document.createElement('div');
+  tags.className='menu-card-tags';
+  (item.tags || []).forEach(value=>{
+    const tag=document.createElement('span');
+    tag.className='menu-card-tag';
+    tag.textContent=value;
+    tags.appendChild(tag);
+  });
+  const foot=document.createElement('div');
+  foot.className='menu-card-foot';
+  const price=document.createElement('span');
+  price.className='menu-card-price';
+  const numericPrice=menuPriceValue(item);
+  price.textContent=numericPrice ? `${numericPrice.toLocaleString('fa-IR')} تومان` : (item.price || defaultProductPrice);
+  const pickButton=document.createElement('button');
+  pickButton.type='button';
+  pickButton.className='menu-pick';
+  pickButton.textContent='انتخاب این نوشیدنی';
+  pickButton.setAttribute('aria-label',`انتخاب ${item.name}`);
+  pickButton.onclick=()=>chooseMenuItem(line,item);
+  foot.append(price,pickButton);
+  body.append(lineName,title,englishName,description,tags,foot);
+  article.append(media,body);
+  return article;
+}
+
+function renderFullMenu(){
+  const visibleItems=Object.entries(items).flatMap(([line,lineItems])=>lineItems.map(item=>({line,item})));
+  elements.menuGrid.replaceChildren();
+  elements.menuCount.textContent=`${visibleItems.length.toLocaleString('fa-IR')} نوشیدنی از ${Object.values(items).flat().length.toLocaleString('fa-IR')} آیتم کالکشن`;
+
+  if(!visibleItems.length){
+    const empty=document.createElement('div');
+    empty.className='menu-empty';
+    empty.innerHTML='<b>آیتمی پیدا نشد</b>عبارت دیگری را جست‌وجو کن یا فیلترها را تغییر بده.';
+    elements.menuGrid.appendChild(empty);
+    return;
+  }
+
+  const fragment=document.createDocumentFragment();
+  visibleItems.forEach(({line,item})=>fragment.appendChild(createMenuCard(line,item)));
+  elements.menuGrid.appendChild(fragment);
+}
+
+function openFullMenu(){
+  menuReturnFocus=document.activeElement;
+  renderFullMenu();
+  show('fullMenu');
+  pushAppState('fullMenu');
+  requestAnimationFrame(()=>elements.menuClose.focus());
+}
+
+function closeFullMenu(restoreFocus=true){
+  if(activeScreen()!=='fullMenu') return;
+  show('intro');
+  replaceAppState('intro');
+  if(restoreFocus && menuReturnFocus && typeof menuReturnFocus.focus==='function') menuReturnFocus.focus();
+  menuReturnFocus=null;
 }
 
 let current=0;
@@ -842,6 +713,10 @@ function applyHistoryState(state){
     renderResult();
     show('result');
     updateProgress();
+  }else if(state?.screen==='fullMenu'){
+    renderFullMenu();
+    show('fullMenu');
+    updateProgress();
   }else if(state?.screen==='quiz' && quizStarted){
     renderQuestion(false);
   }else{
@@ -885,9 +760,15 @@ elements.shareBtn.onclick=share;
 elements.shareClose.onclick=closeSharePreview;
 elements.shareOverlay.onclick=event=>{if(event.target.id==='shareOverlay') closeSharePreview();};
 elements.copyResult.onclick=copyResultText;
+elements.menuOpen.onclick=openFullMenu;
+elements.menuClose.onclick=()=>closeFullMenu();
 
 document.addEventListener('keydown',event=>{
   if(event.key==='Escape'){
+    if(activeScreen()==='fullMenu'){
+      closeFullMenu();
+      return;
+    }
     closeSharePreview();
   }
 });
