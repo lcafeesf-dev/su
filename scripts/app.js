@@ -228,10 +228,40 @@
     element.style.setProperty('--line-ink', meta.ink);
   }
 
+  function hexToRgba(hex, alpha) {
+    const value = String(hex || '').replace('#', '');
+    const normalized = value.length === 3
+      ? value.split('').map((character) => character + character).join('')
+      : value;
+    if (!/^[0-9a-f]{6}$/i.test(normalized)) return `rgba(116, 121, 115, ${alpha})`;
+    const number = Number.parseInt(normalized, 16);
+    const red = (number >> 16) & 255;
+    const green = (number >> 8) & 255;
+    const blue = number & 255;
+    return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+  }
+
+  function setAmbientLine(line = null) {
+    const meta = line ? catalog.lines[line] : null;
+    if (!meta) {
+      delete document.body.dataset.line;
+      document.body.style.setProperty('--active-accent', '#747973');
+      document.body.style.setProperty('--active-accent-soft', 'rgba(116, 121, 115, 0.11)');
+      document.body.style.setProperty('--active-wash-soft', 'rgba(225, 224, 214, 0.42)');
+      return;
+    }
+
+    document.body.dataset.line = line;
+    document.body.style.setProperty('--active-accent', meta.accent);
+    document.body.style.setProperty('--active-accent-soft', hexToRgba(meta.accent, 0.11));
+    document.body.style.setProperty('--active-wash-soft', hexToRgba(meta.wash, 0.48));
+  }
+
   function setLineNavCurrent(line) {
     [...elements.lineNavigation.querySelectorAll('.line-nav-button')].forEach((button) => {
       button.setAttribute('aria-current', String(button.dataset.line === line));
     });
+    if (state.view === 'menu') setAmbientLine(line);
   }
 
   function createTagList(tags, className = '') {
@@ -301,10 +331,12 @@
       const grid = document.createElement('div');
       grid.className = 'product-grid';
 
-      products.forEach((product) => {
+      products.forEach((product, productIndex) => {
         const article = document.createElement('article');
         article.className = 'product-card';
         article.dataset.code = product.code;
+        article.dataset.index = String(productIndex + 1).padStart(2, '0');
+        lineStyles(article, line);
 
         const media = document.createElement('div');
         media.className = 'product-card__media';
@@ -424,6 +456,8 @@
       button.type = 'button';
       button.className = 'answer-option';
       button.style.setProperty('--option-accent', answerAccent(answer));
+      button.style.setProperty('--option-wash', hexToRgba(meta?.wash || '#f3eee7', 0.55));
+      button.style.setProperty('--option-ink', meta?.ink || '#49141d');
       button.setAttribute('aria-label', answer.sub.trim());
 
       const number = document.createElement('span');
@@ -456,6 +490,8 @@
       ? '<span aria-hidden="true">→</span> بازگشت به صفحه اصلی'
       : '<span aria-hidden="true">→</span> سؤال قبل';
 
+    document.body.dataset.quizStep = String(stepNumber);
+    setAmbientLine(state.quizStep === 1 ? state.selectedLine : null);
     showView('quiz');
     if (push) pushHistory();
     if (replace) replaceHistory();
@@ -517,6 +553,7 @@
     }
 
     state.result = result;
+    setAmbientLine(result.main.line);
     showView('pause');
     const pauseDuration = reduceMotionQuery.matches ? 120 : 760;
     state.pendingTimer = window.setTimeout(() => {
@@ -535,6 +572,7 @@
     const { main, secondary } = state.result;
     const mainMeta = catalog.lines[main.line];
     const secondaryMeta = catalog.lines[secondary.line];
+    setAmbientLine(main.line);
     lineStyles(elements.resultShell, main.line);
     elements.resultLineIndex.textContent = lineIndex[main.line] || '01';
     elements.resultCode.textContent = main.code;
@@ -555,6 +593,8 @@
     elements.resultTags.replaceChildren(tagFragment);
 
     elements.secondaryCard.style.setProperty('--secondary-accent', secondaryMeta.accent);
+    elements.secondaryCard.style.setProperty('--secondary-wash', secondaryMeta.wash);
+    elements.secondaryCard.style.setProperty('--secondary-ink', secondaryMeta.ink);
     elements.secondaryLine.textContent = secondaryMeta.name;
     elements.secondaryName.textContent = secondary.name;
     elements.secondaryEnglishName.textContent = secondary.en;
@@ -580,6 +620,7 @@
   function goHome(options = {}) {
     const { push = true, focus = true } = options;
     resetQuizState();
+    setAmbientLine(null);
     showView('home', { focus });
     if (push) pushHistory();
     else replaceHistory();
@@ -589,6 +630,7 @@
     clearPendingTimer();
     buildMenu();
     state.lastViewBeforeMenu = state.view === 'menu' ? 'home' : state.view;
+    setAmbientLine(null);
     const returnTarget = trigger instanceof HTMLElement ? trigger : document.activeElement;
     state.menuReturnFocusId = returnTarget?.id || null;
     showView('menu');
@@ -641,6 +683,7 @@
     } else if (snapshot.view === 'quiz') {
       renderQuestion();
     } else if (snapshot.view === 'menu') {
+      setAmbientLine(null);
       buildMenu();
       showView('menu');
     } else {
@@ -688,6 +731,7 @@
   function initialStateFromLocation() {
     const hash = location.hash;
     if (hash === '#menu') {
+      setAmbientLine(null);
       buildMenu();
       showView('menu', { focus: false, speak: false, scroll: false });
       replaceHistory();
@@ -700,6 +744,7 @@
       return;
     }
 
+    setAmbientLine(null);
     showView('home', { focus: false, speak: false, scroll: false });
     replaceHistory();
   }

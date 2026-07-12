@@ -57,7 +57,7 @@
     <Cell><Data ss:Type="String">Clean · Crisp · Tea-led</Data></Cell>
     <Cell><Data ss:Type="String">چای سرد شفاف با حس سیب تازه؛ انتخابی سبک، روشن و خوش‌عطر برای وقتی که نوشیدنی‌ای خنک و ساده می‌خوای.</Data></Cell>
     <Cell><Data ss:Type="String">سیب ? شفاف? باغ تابستانی</Data></Cell>
-    <Cell ss:Index="16"><Data ss:Type="String">assets/products/it-01.jpg</Data></Cell>
+    <Cell ss:Index="16"><Data ss:Type="String">assets/products/it-01.webp</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="89.25">
     <Cell><Data ss:Type="String">icedtea</Data></Cell>
@@ -70,7 +70,7 @@
     <Cell><Data ss:Type="String">Fruity · Balanced · Tea-led</Data></Cell>
     <Cell><Data ss:Type="String">ترکیب چای سرد سیاه و هلو با بافتی خنک و طعمی آشنا؛ انتخابی خوش‌عطر، متعادل و تابستانی برای کسانی که نوشیدنی‌ای امن و دلنشین میخواهند.</Data></Cell>
     <Cell><Data ss:Type="String">هلویی? تابستان گرم? متعادل</Data></Cell>
-    <Cell ss:Index="16"><Data ss:Type="String">assets/products/it-02.jpg</Data></Cell>
+    <Cell ss:Index="16"><Data ss:Type="String">assets/products/it-02.webp</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="89.25">
     <Cell><Data ss:Type="String">refresher</Data></Cell>
@@ -83,7 +83,7 @@
     <Cell><Data ss:Type="String">Tropical · Fruity · Sparkling</Data></Cell>
     <Cell><Data ss:Type="String">ترکیب انبه و شاهتوت با سودا؛ نوشیدنی‌ای ملس، خنک و سرزنده با طعمی میوه‌ای، مناسب روزهای گرم و لحظه‌هایی که دنبال یک انتخاب شاد تر هستی.</Data></Cell>
     <Cell><Data ss:Type="String">ملس?انبه? استوایی</Data></Cell>
-    <Cell ss:Index="16"><Data ss:Type="String">assets/products/rf-02.jpg</Data></Cell>
+    <Cell ss:Index="16"><Data ss:Type="String">assets/products/rf-02.webp</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="102">
     <Cell><Data ss:Type="String">refresher</Data></Cell>
@@ -96,7 +96,7 @@
     <Cell><Data ss:Type="String">Refresh · Ginger · Sparkling</Data></Cell>
     <Cell><Data ss:Type="String">ترکیب زنجبیل و ریحان ایتالیایی با سودا؛ ترکیبی تازه، طبیعی و متفاوت با تندی ملایم و طعمی سرزنده، برای کسانی که دنبال نوشیدنی‌ای خاص‌تر و خنک‌تر هستند.</Data></Cell>
     <Cell><Data ss:Type="String">ریحان? زنجبیل? تازه</Data></Cell>
-    <Cell ss:Index="16"><Data ss:Type="String">assets/products/rf-03.jpg</Data></Cell>
+    <Cell ss:Index="16"><Data ss:Type="String">assets/products/rf-03.webp</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="76.5">
     <Cell><Data ss:Type="String">cloudy</Data></Cell>
@@ -109,7 +109,7 @@
     <Cell><Data ss:Type="String">Soft · Creamy · Gentle Espresso</Data></Cell>
     <Cell><Data ss:Type="String">کلودی پسته با بافتی نرم و کرمی؛ ترکیبی از طعم اصیل پسته و حضور ملایم اسپرسو که به نوشیدنی عمق، تعادل و لطافتی آرام می‌دهد.</Data></Cell>
     <Cell><Data ss:Type="String">پسته? کرمی?  اسپرسو آرام</Data></Cell>
-    <Cell ss:Index="16"><Data ss:Type="String">assets/products/cl-01.jpg</Data></Cell>
+    <Cell ss:Index="16"><Data ss:Type="String">assets/products/cl-01.webp</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="63.75">
     <Cell><Data ss:Type="String">cloudy</Data></Cell>
@@ -122,7 +122,7 @@
     <Cell><Data ss:Type="String">Sweet · Creamy · Espresso Dessert</Data></Cell>
     <Cell><Data ss:Type="String">انتخابی نرم، شیرین و کرمی، با طعم کوکی در مرکز و اسپرسویی ملایم در پس‌زمینه که به نوشیدنی عمق می‌دهد.</Data></Cell>
     <Cell><Data ss:Type="String">کوکی?کرمی? اسپرسو آرام</Data></Cell>
-    <Cell ss:Index="16"><Data ss:Type="String">assets/products/cl-03.jpg</Data></Cell>
+    <Cell ss:Index="16"><Data ss:Type="String">assets/products/cl-03.webp</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="63.75">
     <Cell><Data ss:Type="String">frappe</Data></Cell>
@@ -135,7 +135,7 @@
     <Cell><Data ss:Type="String">Rich · Icy · Coffee Caramel</Data></Cell>
     <Cell><Data ss:Type="String">نوشیدنی ای کرمی و یخی با ترکیب کارامل شیرین‌وشور و پایه قهوه، انتخابی کلاسیک، هارمونیک و لذت‌بخش.</Data></Cell>
     <Cell><Data ss:Type="String">کارامل نمکی? شیرین? کلاسیک</Data></Cell>
-    <Cell ss:Index="16"><Data ss:Type="String">assets/products/fr-01.jpg</Data></Cell>
+    <Cell ss:Index="16"><Data ss:Type="String">assets/products/fr-01.webp</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="102">
     <Cell><Data ss:Type="String">frappe</Data></Cell>
@@ -148,7 +148,7 @@
     <Cell><Data ss:Type="String">Nutty · Deep · Coffee Dessert</Data></Cell>
     <Cell><Data ss:Type="String">با شخصیتی متناقض میان یخ و آتش، ترکیبی از بافت یخی و طعم گرم و عمیق ارده است؛ متفاوت و مناسب کسانی که دنبال انتخابی خاص‌تر از طعم ‌های کلاسیک هستند.</Data></Cell>
     <Cell><Data ss:Type="String">ارده? اسپرسو? ژلاتو</Data></Cell>
-    <Cell ss:Index="16"><Data ss:Type="String">assets/products/fr-02.jpg</Data></Cell>
+    <Cell ss:Index="16"><Data ss:Type="String">assets/products/fr-02.webp</Data></Cell>
    </Row>
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
