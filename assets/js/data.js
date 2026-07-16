@@ -8,8 +8,8 @@ const CAFE_LINES = {
     number: "01",
     caption: "CLEAR · AROMATIC · TEA-LED",
     intro: "شفاف، خوش‌عطر و روشن؛ برای مکث‌هایی که باید سبک بمانند.",
-    accent: "#e2a13b",
-    ink: "#4a0b18"
+    accent: "#5e8f79",
+    ink: "#fffaf4"
   },
   refresher: {
     key: "refresher",
@@ -18,8 +18,8 @@ const CAFE_LINES = {
     number: "02",
     caption: "FRUITY · BRIGHT · SPARKLING",
     intro: "میوه‌ای، گازدار و سرزنده؛ برای لحظه‌هایی که انرژی تازه می‌خواهند.",
-    accent: "#b44c5b",
-    ink: "#45101a"
+    accent: "#985064",
+    ink: "#fffaf4"
   },
   cloudy: {
     key: "cloudy",
@@ -28,8 +28,8 @@ const CAFE_LINES = {
     number: "03",
     caption: "SOFT · CREAMY · LAYERED",
     intro: "ابری، کرمی و آرام؛ با لایه‌هایی که آهسته خودشان را نشان می‌دهند.",
-    accent: "#a9aa62",
-    ink: "#3a251f"
+    accent: "#2f6b56",
+    ink: "#fffaf4"
   },
   frappe: {
     key: "frappe",
@@ -38,8 +38,8 @@ const CAFE_LINES = {
     number: "04",
     caption: "ICY · RICH · COFFEE DESSERT",
     intro: "برفی، غلیظ و لذت‌بخش؛ یک دسر سرد برای مکث‌های طولانی‌تر.",
-    accent: "#ba8764",
-    ink: "#351a16"
+    accent: "#76283a",
+    ink: "#fffaf4"
   }
 };
 
@@ -52,7 +52,7 @@ const CAFE_PRODUCTS = [
   },
   {
     code: "IT-02", line: "icedtea", name: "آیس‌تی پیچ بلک", en: "Peach Black Tea Iced",
-    image: "assets/images/it-02.webp", price: 350000, mood: "Fruity · Balanced · Tea-led",
+    image: "assets/images/it-01.webp", price: 350000, mood: "Fruity · Balanced · Tea-led",
     description: "ترکیب چای سرد سیاه و هلو با بافتی خنک و طعمی آشنا؛ انتخابی خوش‌عطر، متعادل و تابستانی برای کسانی که نوشیدنی‌ای امن و دلنشین می‌خواهند.",
     tags: ["هلویی", "تابستان گرم", "متعادل"]
   },
