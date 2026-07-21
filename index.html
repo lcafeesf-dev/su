@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:wght@700&family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:wght@700&family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet"></noscript>
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260719-mobile-transition">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260721-tighter-hero-gap">
   <title>Find Your Summer Pause | L Cafe</title>
 </head>
 <body>
@@ -21,7 +21,7 @@
 
   <div class="app-shell" id="appShell">
     <main id="mainContent" tabindex="-1">
-      <section class="screen home-screen is-active" id="homeScreen" aria-labelledby="homeTitle">
+      <section class="screen home-screen" id="homeScreen" aria-labelledby="homeTitle" hidden>
         <div class="home-backdrop" aria-hidden="true">
           <figure class="home-frame home-frame--one"><img id="homeImageA" alt="" src="assets/images/it-01.webp" srcset="assets/images/it-01-640.webp 640w, assets/images/it-01-960.webp 960w, assets/images/it-01.webp 1254w" width="1254" height="1254" sizes="(max-width: 480px) 88vw, 422px" loading="eager" fetchpriority="high" decoding="async"></figure>
           <figure class="home-frame home-frame--two"><img id="homeImageB" alt="" width="1254" height="1254" sizes="(max-width: 480px) 44vw, 211px" loading="lazy" fetchpriority="low" decoding="async"></figure>
@@ -149,7 +149,7 @@
         </div>
       </section>
 
-      <section class="screen menu-screen" id="menuScreen" aria-labelledby="menuTitle" hidden>
+      <section class="screen menu-screen is-active" id="menuScreen" aria-labelledby="menuTitle">
         <div class="menu-cover">
           <div class="menu-cover-gallery" aria-hidden="true">
             <figure class="menu-cover-frame menu-cover-frame--one"><img id="menuCoverImageA" alt="" width="1254" height="1254" sizes="(max-width: 480px) 74vw, 355px" decoding="async"></figure>
@@ -159,15 +159,22 @@
           </div>
 
           <header class="menu-top menu-top--cover">
-            <button class="icon-button" id="closeMenuButton" type="button" aria-label="بازگشت"><span aria-hidden="true">→</span></button>
+            <button class="icon-button" id="closeMenuButton" type="button" aria-label="بازگشت به نتیجه" hidden><span aria-hidden="true">→</span></button>
             <img class="mini-logo" src="assets/brand/lcafe-logo.svg" alt="L Cafe" width="92" height="44">
             <span class="season-mark" dir="ltr">SUMMER · 1405</span>
           </header>
 
-          <div class="menu-intro">
-            <p class="eyebrow" dir="ltr">THE SUMMER COLLECTION</p>
-            <h1 id="menuTitle" tabindex="-1">ده مکث<br>برای تابستان</h1>
-            <div class="menu-intro-foot"><p>چهار فصل کوتاه از طعم، بافت و خنکی؛ هر نوشیدنی با صحنه و شخصیت خودش.</p></div>
+          <div class="menu-intro menu-intro--compact">
+            <div class="menu-intro-heading">
+              <p class="eyebrow" dir="ltr">THE SUMMER COLLECTION</p>
+              <p class="menu-intro-fa">کالکشن تابستانی ال کافه</p>
+            </div>
+            <h1 class="sr-only" id="menuTitle" tabindex="-1">منوی کامل نوشیدنی‌های تابستانی</h1>
+            <p class="menu-intro-summary">چهار حال‌وهوا، ده نوشیدنی؛ انتخابی برای مکث همین لحظه.</p>
+            <button class="menu-intro-quiz" id="menuQuizButtonTop" type="button">
+              <span class="action-copy"><b>نوشیدنی من را پیدا کن</b><small>دو سؤال کوتاه، یک پیشنهاد مخصوص تو</small></span>
+              <span class="action-icon" aria-hidden="true">←</span>
+            </button>
           </div>
         </div>
 
@@ -188,6 +195,6 @@
 
   <noscript><div class="noscript">برای استفاده از کوییز و مشاهده منو، JavaScript مرورگر را فعال کنید.</div></noscript>
   <script src="assets/js/data.js" defer></script>
-  <script src="assets/js/app.js?v=20260719-mobile-transition" defer></script>
+  <script src="assets/js/app.js?v=20260721-natural-claim" defer></script>
 </body>
 </html>

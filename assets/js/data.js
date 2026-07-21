@@ -8,6 +8,7 @@ const CAFE_LINES = {
     number: "01",
     caption: "CLEAR · AROMATIC · TEA-LED",
     intro: "شفاف، خوش‌عطر و روشن؛ برای مکث‌هایی که باید سبک بمانند.",
+    claim: "بدون هرگونه سیروپ و طعم‌دهندهٔ مصنوعی",
     accent: "#e2a13b",
     ink: "#4a0b18"
   },
@@ -18,6 +19,7 @@ const CAFE_LINES = {
     number: "02",
     caption: "FRUITY · BRIGHT · SPARKLING",
     intro: "میوه‌ای، گازدار و سرزنده؛ برای لحظه‌هایی که انرژی تازه می‌خواهند.",
+    claim: "بدون هرگونه سیروپ و طعم‌دهندهٔ مصنوعی",
     accent: "#b44c5b",
     ink: "#45101a"
   },

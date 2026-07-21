@@ -2,11 +2,11 @@
 
 (() => {
   const state = {
-    currentScreen: "homeScreen",
+    currentScreen: "menuScreen",
     quizStep: 1,
     selectedLine: null,
     resultCode: null,
-    previousScreenBeforeMenu: "homeScreen",
+    previousScreenBeforeMenu: "menuScreen",
     transitioning: false,
     screenTransitioning: false,
     reducedMotion: window.matchMedia("(prefers-reduced-motion: reduce)").matches
@@ -55,6 +55,7 @@
     closeMenuButton: document.getElementById("closeMenuButton"),
     menuTitle: document.getElementById("menuTitle"),
     menuChapters: document.getElementById("menuChapters"),
+    menuQuizButtonTop: document.getElementById("menuQuizButtonTop"),
     menuQuizButton: document.getElementById("menuQuizButton"),
     screenReaderStatus: document.getElementById("screenReaderStatus")
   };
@@ -143,8 +144,8 @@
   function renderInitialShowcase() {
     const hero = productByCode.get(INITIAL_HERO_CODE) || CAFE_PRODUCTS[0];
     const supportingProducts = randomProducts(3).filter(product => product.code !== hero.code).slice(0, 2);
-    setImage(elements.homeShowcaseImages[0], hero.image, "");
-    supportingProducts.forEach((product, index) => setImage(elements.homeShowcaseImages[index + 1], product.image, ""));
+    setImage(elements.menuCoverImages[0], hero.image, "");
+    supportingProducts.forEach((product, index) => setImage(elements.menuCoverImages[index + 1], product.image, ""));
   }
 
   function deferNonCriticalWork(callback) {
@@ -314,9 +315,7 @@
       state.selectedLine = null;
       renderQuizStep();
     } else {
-      renderRandomShowcase(elements.homeShowcaseImages);
-      showScreen("homeScreen", elements.startQuizButton);
-      announce("صفحه شروع");
+      showMenuHome();
     }
   }
 
@@ -404,6 +403,12 @@
       const chapterIntro = document.createElement("p");
       chapterIntro.textContent = line.intro;
       chapterHead.append(chapterHeading, chapterIntro);
+      if (line.claim) {
+        const chapterClaim = document.createElement("p");
+        chapterClaim.className = "menu-chapter-claim";
+        chapterClaim.textContent = line.claim;
+        chapterHead.append(chapterClaim);
+      }
       const productsWrap = document.createElement("div");
       productsWrap.className = "chapter-products";
       productsByLine[line.key].forEach((product, productIndex) => {
@@ -471,26 +476,33 @@
     if (state.screenTransitioning) return;
     ensureMenuBuilt();
     renderRandomShowcase(elements.menuCoverImages);
-    state.previousScreenBeforeMenu = origin === "menuScreen" ? "homeScreen" : origin;
+    state.previousScreenBeforeMenu = origin === "resultScreen" ? "resultScreen" : "menuScreen";
+    elements.closeMenuButton.hidden = origin !== "resultScreen";
     showScreen("menuScreen", elements.menuTitle);
     announce("منوی کامل نوشیدنی‌های تابستانی");
   }
 
   function closeMenu() {
     if (state.screenTransitioning) return;
-    const target = state.previousScreenBeforeMenu === "resultScreen" ? "resultScreen" : "homeScreen";
-    const focusTarget = target === "resultScreen" ? elements.resultMenuButton : elements.openMenuButton;
-    if (target === "homeScreen") renderRandomShowcase(elements.homeShowcaseImages);
-    showScreen(target, focusTarget);
-    announce(target === "resultScreen" ? `بازگشت به نتیجه ${elements.resultName.textContent}` : "صفحه شروع");
+    if (state.previousScreenBeforeMenu !== "resultScreen") return;
+    showScreen("resultScreen", elements.resultMenuButton);
+    announce(`بازگشت به نتیجه ${elements.resultName.textContent}`);
+  }
+
+  function showMenuHome() {
+    if (state.screenTransitioning) return;
+    ensureMenuBuilt();
+    state.previousScreenBeforeMenu = "menuScreen";
+    elements.closeMenuButton.hidden = true;
+    renderRandomShowcase(elements.menuCoverImages);
+    showScreen("menuScreen", elements.menuTitle);
+    announce("منوی کامل نوشیدنی‌های تابستانی");
   }
 
   function goHome() {
     if (state.screenTransitioning) return;
     cancelPendingFlow();
-    renderRandomShowcase(elements.homeShowcaseImages);
-    showScreen("homeScreen", elements.startQuizButton);
-    announce("صفحه شروع");
+    showMenuHome();
   }
 
   function bindEvents() {
@@ -501,11 +513,12 @@
     elements.restartQuizButton.addEventListener("click", startQuiz);
     elements.resultMenuButton.addEventListener("click", () => openMenu("resultScreen"));
     elements.closeMenuButton.addEventListener("click", closeMenu);
+    elements.menuQuizButtonTop.addEventListener("click", startQuiz);
     elements.menuQuizButton.addEventListener("click", startQuiz);
     window.addEventListener("keydown", event => {
       if (event.key !== "Escape") return;
       if (state.screenTransitioning) return;
-      if (state.currentScreen === "menuScreen") closeMenu();
+      if (state.currentScreen === "menuScreen" && !elements.closeMenuButton.hidden) closeMenu();
       else if (state.currentScreen === "quizScreen") goBackFromQuiz();
       else if (state.currentScreen === "resultScreen") goHome();
     });
@@ -513,6 +526,6 @@
 
   initMotionBudget();
   renderInitialShowcase();
+  ensureMenuBuilt();
   bindEvents();
-  if (!navigator.connection?.saveData) deferNonCriticalWork(ensureMenuBuilt);
 })();
